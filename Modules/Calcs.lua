@@ -299,6 +299,9 @@ function calcs.buildOutput(build, mode)
 		if env.modDB:Flag(nil, "HerEmbrace") then
 			t_insert(combatList, "Her Embrace")
 		end
+		if env.modDB:Flag(nil, "Elusive") then
+			t_insert(combatList, "Elusive")
+		end
 		for name in pairs(env.buffs) do
 			t_insert(buffList, name)
 		end
