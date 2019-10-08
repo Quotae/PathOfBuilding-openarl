@@ -393,13 +393,17 @@ return {
 	{ var = "buffAdrenaline", type = "check", label = "Do you have Adrenaline?", tooltip = "This will enable the Adrenaline buff:\n100% increased Damage\n25% increased Attack, Cast and Movement Speed\n10% additional Physical Damage Reduction", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:Adrenaline", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
+	{ var = "buffElusive", type = "check", label = "Are you Elusive?", ifCond = "CanBeElusive", tooltip = "In addition to allowing any 'while Elusive' modifiers to apply,\nthis will enable the Elusive buff itself. (20% Attack and Spell Dodge, 40% increased Movement Speed)\nThe effect of Elusive decays over time.", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:Elusive", "FLAG", true, "Config", { type = "Condition", varList = { "Combat", "Elusive" } })
+		modList:NewMod("Elusive", "FLAG", true, "Config", { type = "Condition", varList = { "Combat", "Elusive" } })
+	end },
 	{ var = "buffDivinity", type = "check", label = "Do you have Divinity?", ifCond = "Divinity", tooltip = "This will enable the Divinity buff:\n50% more Elemental Damage\n20% less Elemental Damage Taken", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:Divinity", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "multiplierRage", type = "count", label = "Rage:", ifCond = "CanGainRage", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:Rage", "BASE", val, "Config", { type = "IgnoreCond" }, { type = "Condition", var = "Combat" }, { type = "Condition", var = "CanGainRage" })
 	end },
-	{ var = "conditionLeeching", type = "check", label = "Are you Leeching?", ifCond = "Leeching", apply = function(val, modList, enemyModList)
+	{ var = "conditionLeeching", type = "check", label = "Are you Leeching?", ifCond = "Leeching", tooltip = "You will automatically be considered to be Leeching if you have 'Life Leech effects are not removed on full life',\nbut you can use this option to force it if necessary.", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:Leeching", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "conditionLeechingLife", type = "check", label = "Are you Leeching Life?", ifCond = "LeechingLife", implyCond = "Leeching", apply = function(val, modList, enemyModList)
@@ -423,11 +427,11 @@ return {
 	{ var = "multiplierNearbyAlly", type = "count", label = "# of Nearby Allies", ifMult = "NearbyAlly", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:NearbyAlly", "BASE", val, "Config", { type = "Condition", var = "Combat" })
 	end },
-	{ var = "multiplierNearbyEnemy", type = "count", label = "# of Nearby Enemies", ifMult = "NearbyEnemy", apply = function(val, modList, enemyModList)
-		modList:NewMod("Multiplier:NearbyEnemy", "BASE", val, "Config", { type = "Condition", var = "Combat" })
-  end },
 	{ var = "multiplierNearbyCorpse", type = "count", label = "# of Nearby Corpses", ifMult = "NearbyCorpse", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:NearbyCorpse", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "multiplierNearbyEnemy", type = "count", label = "# of Nearby Enemies", ifMult = "NearbyEnemy", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:NearbyEnemy", "BASE", val, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "conditionOnConsecratedGround", type = "check", label = "Are you on Consecrated Ground?", tooltip = "In addition to allowing any 'while on Consecrated Ground' modifiers to apply,\nthis will apply the 6% life regen modifier granted by Consecrated Ground.", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:OnConsecratedGround", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
@@ -458,6 +462,7 @@ return {
 	end },
 	{ var = "conditionShocked", type = "check", label = "Are you Shocked?", ifCond = "Shocked", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:Shocked", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+		modList:NewMod("DamageTaken", "INC", 50, "Shock", { type = "Condition", var = "Shocked" })
 	end },
 	{ var = "conditionBleeding", type = "check", label = "Are you Bleeding?", ifCond = "Bleeding", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:Bleeding", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
@@ -468,8 +473,15 @@ return {
 	{ var = "multiplierPoisonOnSelf", type = "count", label = "# of Poison on You:", ifMult = "PoisonStack", implyCond = "Poisoned", tooltip = "This also implies that you are Poisoned.", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:PoisonStack", "BASE", val, "Config", { type = "Condition", var = "Effective" })
 	end },
+	{ var = "conditionAgainstDamageOverTime", type = "check", label = "Are you against damage over time?", ifCond = "AgainstDamageOverTime", apply = function(val, modList, enemyModList)
+		modList:NewMod("Condition:AgainstDamageOverTime", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
 	{ var = "conditionOnlyOneNearbyEnemy", type = "check", label = "Is there only one nearby Enemy?", ifCond = "OnlyOneNearbyEnemy", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:OnlyOneNearbyEnemy", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "multiplierNearbyEnemies", type = "count", label = "# of nearby Enemies:", ifMult = "NearbyEnemies", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:NearbyEnemies", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+		modList:NewMod("Condition:OnlyOneNearbyEnemy", "FLAG", val == 1, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "conditionHitRecently", type = "check", label = "Have you Hit Recently?", ifCond = "HitRecently", tooltip = "You will automatically be considered to have Hit Recently if your main skill is self-cast,\nbut you can use this option to force it if necessary.", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:HitRecently", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
@@ -528,6 +540,10 @@ return {
 	end },
 	{ var = "conditionBeenHitRecently", type = "check", label = "Have you been Hit Recently?", ifCond = "BeenHitRecently", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:BeenHitRecently", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "multiplierBeenHitRecently", type = "count", label = "# of Have you been Hit Recently:", ifMult = "BeenHitRecently", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:BeenHitRecently", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+		modList:NewMod("Condition:BeenHitRecently", "FLAG", 1 <= val, "Config", { type = "Condition", var = "Combat" })
 	end },
 	{ var = "conditionBeenCritRecently", type = "check", label = "Have you been Crit Recently?", ifCond = "BeenCritRecently", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:BeenCritRecently", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
@@ -663,6 +679,12 @@ return {
 	{ var = "conditionBlockedHitFromUniqueEnemyInPast10Sec", type = "check", ifVer = "3_0", label = "Blocked hit from a Unique in the past 10s?", ifNode = 63490, apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:BlockedHitFromUniqueEnemyInPast10Sec", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
+	{ var = "conditionImpaledRecently", type = "check", ifVer="3_0", label = "Impaled an Enemy recently?", apply = function(val, modList, enemyModLIst)
+		modList:NewMod("Condition:ImpaledRecently", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
+	end },
+	{ var = "multiplierImpalesOnEnemy", type = "count", label = "# of Impales on Enemy (if not maximum):", apply = function(val, modList, enemyModList)
+		enemyModList:NewMod("Multiplier:ImpaleStack", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+	end },
 
 	-- Section: Effective DPS options
 	{ section = "For Effective DPS", col = 1 },
@@ -672,6 +694,7 @@ return {
 	{ var = "skillChainCount", type = "count", label = "# of times Skill has Chained:", ifFlag = "chaining", apply = function(val, modList, enemyModList)
 		modList:NewMod("ChainCount", "BASE", val, "Config", { type = "Condition", var = "Effective" })
 	end },
+	{ var = "meleeDistance", type = "count", label = "Melee distance to enemy:", ifFlag = "melee" },
 	{ var = "projectileDistance", type = "count", label = "Projectile travel distance:", ifFlag = "projectile" },
 	{ var = "conditionAtCloseRange", type = "check", label = "Is the enemy at Close Range?", ifCond = "AtCloseRange", apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:AtCloseRange", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
@@ -721,8 +744,11 @@ return {
 	{ var = "conditionEnemyFrozen", type = "check", label = "Is the enemy Frozen?", implyCond = "Chilled", tooltip = "This also implies that the enemy is Chilled.", apply = function(val, modList, enemyModList)
 		enemyModList:NewMod("Condition:Frozen", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
 	end },
-	{ var = "conditionEnemyShocked", type = "check", label = "Is the enemy Shocked?", tooltip = "In addition to allowing any 'against Shocked Enemies' modifiers to apply,\nthis will apply Shock's Damage Taken modifier to the enemy.", apply = function(val, modList, enemyModList)
+	{ var = "conditionEnemyShocked", type = "check", label = "Is the enemy Shocked?", tooltip = "In addition to allowing any 'against Shocked Enemies' modifiers to apply,\nthis will allow you to input the effect of the Shock applied to the enemy.\n\nShock increases Damage Taken by the enemy by the Effect of Shock specified, up to 50%.\nGuaranteed sources of Shock with an unspecified effect apply a base Shock of 20%.", apply = function(val, modList, enemyModList)
 		enemyModList:NewMod("Condition:Shocked", "FLAG", true, "Config", { type = "Condition", var = "Effective" })
+	end },
+	{ var = "conditionShockEffect", type = "count", label = "Effect of Shock:", ifOption = "conditionEnemyShocked", apply = function(val,modList,enemyModList)
+		enemyModList:NewMod("DamageTaken", "INC", val, "Shock", { type = "Condition", var = "Shocked" })
 	end },
 	{ var = "multiplierFreezeShockIgniteOnEnemy", type = "count", label = "# of Freeze/Shock/Ignite on Enemy:", ifMult = "FreezeShockIgniteOnEnemy", apply = function(val, modList, enemyModList)
 		modList:NewMod("Multiplier:FreezeShockIgniteOnEnemy", "BASE", val, "Config", { type = "Condition", var = "Effective" })

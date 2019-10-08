@@ -44,7 +44,6 @@ function calcs.initModDB(env, modDB)
 	modDB:NewMod("TotemPlacementTime", "BASE", 0.6, "Base")
 	modDB:NewMod("ActiveTotemLimit", "BASE", 1, "Base")
 	modDB:NewMod("LifeRegenPercent", "BASE", 6, "Base", { type = "Condition", var = "OnConsecratedGround" })
-	modDB:NewMod("DamageTaken", "INC", 50, "Base", { type = "Condition", var = "Shocked" })
 	modDB:NewMod("HitChance", "MORE", -50, "Base", { type = "Condition", var = "Blinded" })
 	modDB:NewMod("MovementSpeed", "INC", -30, "Base", { type = "Condition", var = "Maimed" })
 	modDB:NewMod("Condition:Burning", "FLAG", true, "Base", { type = "IgnoreCond" }, { type = "Condition", var = "Ignited" })
@@ -281,6 +280,21 @@ function calcs.initEnv(build, mode, override)
 			modDB:NewMod("PhysicalDamage", "INC", 20, "Bandit")
 		else
 			modDB:NewMod("ExtraPoints", "BASE", 2, "Bandit")
+		end
+	end
+
+	-- Add Pantheon mods
+	if build.targetVersion == "3_0" then
+		local parser = modLib.parseMod[build.targetVersion]
+		-- Major Gods
+		if build.pantheonMajorGod ~= "None" then
+			local majorGod = env.data.pantheons[build.pantheonMajorGod]
+			pantheon.applySoulMod(modDB, parser, majorGod)
+		end
+		-- Minor Gods
+		if build.pantheonMinorGod ~= "None" then
+			local minorGod = env.data.pantheons[build.pantheonMinorGod]
+			pantheon.applySoulMod(modDB, parser, minorGod)
 		end
 	end
 
