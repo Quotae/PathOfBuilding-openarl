@@ -599,6 +599,9 @@ return {
 			modList:NewMod("Condition:IgnitingConflux", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 		end
 	end },
+	{ var = "multiplierSummonedGolems", type = "count", label = "# of Summoned Golems:", ifMult = "SummonedGolems", apply = function(val, modList, enemyModList)
+		modList:NewMod("Multiplier:SummonedGolems", "BASE", val, "Config", { type = "Condition", var = "Combat" })
+	end },
 	{ var = "buffBastionOfHope", type = "check", label = "Is Bastion of Hope active?", ifNode = 39728, apply = function(val, modList, enemyModList)
 		modList:NewMod("Condition:BastionOfHopeActive", "FLAG", true, "Config", { type = "Condition", var = "Combat" })
 	end },
