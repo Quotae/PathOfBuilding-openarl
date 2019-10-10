@@ -752,6 +752,11 @@ local modTagList = {
 	["per totem"] = { tag = { type = "PerStat", stat = "ActiveTotemLimit" } },
 	["for each time they have chained"] = { tag = { type = "PerStat", stat = "Chain" } },
 	["for each time it has chained"] = { tag = { type = "PerStat", stat = "Chain" } },
+	["per summoned golem"] =  { tag = { type = "Multiplier", var = "SummonedGolems" } },
+	["while you have a summoned golem"] =  { tag = { type = "MultiplierThreshold", var = "SummonedGolems", threshold = 1 } },
+
+	
+-- ["critical strike chance is increased by uncapped lightning resistance"] = { mod("CritChance", "INC", 1, { type = "PerStat", stat = "LightningResistTotal", div = 1 }) },
 	-- Stat conditions
 	["with (%d+) or more strength"] = function(num) return { tag = { type = "StatThreshold", stat = "Str", threshold = num } } end,
 	["with at least (%d+) strength"] = function(num) return { tag = { type = "StatThreshold", stat = "Str", threshold = num } } end,
@@ -1138,6 +1143,7 @@ local specialModList = {
 		flag("ChaosCanIgnite", { type = "Condition", var = "IgnitingConflux" }),
 	},
 	["gain chilling, shocking and igniting conflux for %d seconds"] = { },
+	["(%d+)%% increased golem damage per summoned golem"] = mod("MinionModifier", "LIST", { mod = mod("Damage", "INC", num, { type = "SkillType", skillType = SkillType.Golem }, { type = "Multiplier", var = "SummonedGolems" } ) } ),
 	-- Gladiator
 	["enemies maimed by you take (%d+)%% increased physical damage"] = function(num) return { mod("EnemyModifier", "LIST", { mod = mod("PhysicalDamageTaken", "INC", num, { type = "Condition", var = "Maimed" }) }) } end,
 	["chance to block spell damage is equal to chance to block attack damage"] = { flag("SpellBlockChanceIsBlockChance") },
@@ -1450,6 +1456,7 @@ local specialModList = {
 		mod("MinionModifier", "LIST", { mod = mod("Damage", "INC", num, { type = "ActorCondition", actor = "parent", var = "HaveFireGolem" }) }, { type = "SkillType", skillType = SkillType.Golem }),
 		mod("MinionModifier", "LIST", { mod = mod("Damage", "INC", num, { type = "ActorCondition", actor = "parent", var = "HaveChaosGolem" }) }, { type = "SkillType", skillType = SkillType.Golem }),
 	} end,
+	["(%d+)%% increased golem damage"] = mod("MinionModifier", "LIST", { mod = mod("Damage", "INC", num, { type = "SkillType", skillType = SkillType.Golem } ) } ),
 	["can summon up to (%d) additional golems? at a time"] = function(num) return { mod("ActiveGolemLimit", "BASE", num) } end,
 	["if you have 3 primordial jewels, can summon up to (%d) additional golems? at a time"] = function(num) return { mod("ActiveGolemLimit", "BASE", num, { type = "MultiplierThreshold", var = "PrimordialItem", threshold = 3 }) } end,
 	["golems regenerate (%d)%% of their maximum life per second"] = function(num) return { mod("MinionModifier", "LIST", { mod = mod("LifeRegenPercent", "BASE", num) }, { type = "SkillType", skillType = SkillType.Golem }) } end,
