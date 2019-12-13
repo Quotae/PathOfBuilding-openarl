@@ -207,15 +207,50 @@ Requires Level 8, 23 Int
 Asenath's Chant
 Iron Circlet
 Source: Upgraded from unique{Asenath's Mark} via prophecy{Song of the Sekhema}
+Variant: Pre 3.9.0
+Variant: Current
 Requires Level 45
-Implicits: 0
-25% chance to Trigger a Socketed Spell when you Attack with a Bow
+{variant:1}25% chance to Trigger a Socketed Spell when you Attack with a Bow
+{variant:2}Trigger a Socketed Spell when you Attack with a Bow
 (10–15)% increased Attack Speed
 (10–15)% increased Cast Speed
 +(100–120) to maximum Energy Shield
 (30–40)% increased Stun and Block Recovery
 30% increased Mana Regeneration Rate
 5% increased Movement Speed
+]],[[
+Cowl of the Ceraunophile
+Solaris Circlet
+Requires Level 59, 122 Int
+League: Blight
+Can have a second Enchantment Modifier
++(20–30) to all Attributes
+(60–80)% increased Energy Shield
+(50–55)% reduced Fire Resistance
+(50–55)% reduced Cold Resistance
+Lightning Resistance is 75%
+]],[[
+Cowl of the Cryophile
+Silken Hood
+Requires Level 60, 138 Dex
+League: Blight
+Can have a second Enchantment Modifier
++(20–30) to all Attributes
+(60–80)% increased Evasion Rating
+(50–55)% reduced Fire Resistance
+(50–55)% reduced Lightning Resistance
+Cold Resistance is 75%
+]],[[
+Cowl of the Thermophile
+Ezomyte Burgonet
+Requires Level 60, 138 Str
+League: Blight
+Can have a second Enchantment Modifier
++(20–30) to all Attributes
+(60–80)% increased Armour
+(50–55)% reduced Cold Resistance
+(50–55)% reduced Lightning Resistance
+Fire Resistance is 75%
 ]],[[
 Chitus' Apex
 Necromancer Circlet
@@ -229,17 +264,15 @@ Requires Level 54, 112 Int
 Crown of Eyes
 Hubris Circlet
 Variant: {2_6}Pre 3.5.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 69, 154 Int
-{variant:1,2}+(200-250) to Accuracy Rating
-{variant:3}+(300-350) to Accuracy Rating
++(200-250) to Accuracy Rating
 (120-150)% increased Energy Shield
 −30% to Fire Resistance
 {variant:1}(0.4-0.8)% of Physical Attack Damage Leeched as Life
-{variant:2,3}(0.4-0.8)% of Attack Damage Leeched as Life
+{variant:2}(0.4-0.8)% of Attack Damage Leeched as Life
 {variant:1}(0.2-0.4)% of Physical Attack Damage Leeched as Mana
-{variant:2,3}(0.2-0.4)% of Attack Damage Leeched as Mana
+{variant:2}(0.2-0.4)% of Attack Damage Leeched as Mana
 Increases and Reductions to Spell Damage also apply to Attacks
 ]],[[
 Crown of Thorns
@@ -404,7 +437,7 @@ Raging Spirits refresh their Duration when they Kill an Ignited Enemy
 Maw of Conquest
 Steel Circlet
 League: Legion
-Source: Drops from normal{Vaal} legion
+Source: Drops from Maraketh Legion
 Requires Level 48, 101 Int
 (60-80)% increased Critical Strike Chance for Spells
 (200-250)% increased Energy Shield
@@ -458,7 +491,7 @@ Minions Regenerate 1% Life per second
 Wreath of Phrecia
 Iron Circlet
 League: Legion
-Source: Drops from normal{Eternal} legion
+Source: Drops from Eternal Legion
 Requires Level 8
 Has no Attribute Requirements
 Increases and Reductions to Light Radius also apply to Area of Effect at 50% of their value
@@ -504,6 +537,8 @@ Socketed Gems are Supported by level 18 Melee Physical Damage
 {variant:2,3}Socketed Gems are Supported by level 12 Faster Attacks
 {variant:1,4}Socketed Gems are Supported by level 18 Blind
 {variant:2,3}Socketed Gems are Supported by level 6 Blind
+{variant:1,2}15% Chance to Block
+{variant:3,4}6% Chance to Block
 Adds 20 to 30 Physical Damage to Attacks
 (200-300)% increased Armour and Evasion
 {variant:1,4}+(200-220) to maximum Life
@@ -513,7 +548,7 @@ Adds 20 to 30 Physical Damage to Attacks
 Extra gore
 Can't use Chest armour
 {variant:1,2}15% Chance to Block
-{variant:3}6% Chance to Block
+{variant:3,4}6% Chance to Block
 ]],[[
 Deidbell
 Gilded Sallet
@@ -557,17 +592,15 @@ Mercury Footprints
 The Peregrine
 Visored Sallet
 Variant: Pre 2.6.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 23, 28 Str, 28 Dex
 {variant:1}+100 to Accuracy Rating
 {variant:2}+300 to Accuracy Rating
-{variant:3}+500 to Accuracy Rating
 (40-60)% increased Armour and Evasion
 (20-30)% increased Rarity of Items found
 +30% to Lightning Resistance
 {variant:1}0.2% of Physical Attack Damage Leeched as Mana
-{variant:2,3}0.4% of Attack Damage Leeched as Mana
+{variant:2}0.4% of Attack Damage Leeched as Mana
 10% increased Movement Speed
 ]],[[
 Skullhead
@@ -683,7 +716,7 @@ Summoned Holy Relics have (20–25)% reduced Cooldown Recovery Speed
 Honourhome
 Soldier Helmet
 League: Legion
-Source: Drops from normal{Eternal} legion
+Source: Drops from Eternal Legion
 Variant: Pre 3.7.0
 Variant: Current
 Requires Level 12, 16 Str, 16 Int
@@ -765,10 +798,10 @@ Cannot gain Energy Shield
 ]],[[
 Mask of the Tribunal
 Magistrate Crown
-Fractured Item
 League: Synthesis
+Source: Drops from unique{Altered/Augmented/Rewritten/Twisted Synthete}
 Requires Level 58, 64 Str, 64 Int
-{fractured}+(25-30) to all Attributes
++(25-30) to all Attributes
 (150-200)% increased Armour and Energy Shield
 Nearby Allies have (4-6)% increased Defences per 100 Strength you have
 Nearby Allies have +(6-8)% to Critical Strike Multiplier per 100 Dexterity you have
@@ -782,7 +815,7 @@ Requires Level 68
 +(130–160) to maximum Energy Shield
 +(150–200) to maximum Mana
 (30–40)% increased Mana Regeneration Rate
-+(20–25)% to Fire Resistance
++(20–30)% to Fire Resistance
 10% increased Mana Reserved
 Gain Armour equal to your Reserved Mana
 ]],[[
@@ -849,10 +882,10 @@ Curtain Call
 Plague Mask
 Requires Level 20
 +23 to maximum Life
-(10–15)% reduced Mine Laying Speed
-(40–50)% increased Mine Arming Speed
-Skills which Place Mines place up to 1 additional Mine if you have at least 500 Dexterity
-Skills which Place Mines place up to 1 additional Mine if you have at least 500 Intelligence
+(15-10)% reduced Mine Throwing Speed
+Mines have (40-50)% increased Detonation Speed
+Skills which Place Mines place up to 1 additional Mine if you have at least 800 Dexterity
+Skills which Place Mines place up to 1 additional Mine if you have at least 800 Intelligence
 ]],[[
 Farrul's Bite
 Harlequin Mask
@@ -868,7 +901,8 @@ Critical Strikes have (10–20)% chance to Blind Enemies while you have Cat's St
 ]],[[
 Fractal Thoughts
 Vaal Mask
-Requires Level 62
+League: Legion
+Requires Level: 62, 79 Dex, 72 Int
 (140–180)% increased Evasion and Energy Shield
 +(25–40)% to Critical Strike Multiplier if Dexterity is higher than Intelligence
 15% increased Dexterity if Strength is higher than Intelligence
@@ -933,7 +967,6 @@ Iron Mask
 Upgrade: Upgrades to unique{Malachai's Awakening} via prophecy{The Nightmare Awakens}
 Variant: Pre 1.0.0
 Variant: Pre 2.0.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 17, 21 Dex, 21 Int
 (15-30)% increased Spell Damage
@@ -943,13 +976,10 @@ Requires Level 17, 21 Dex, 21 Int
 {variant:1}100% increased Mana Cost of Skills
 {variant:2}20% increased Mana Cost of Skills
 Blood Magic
-{variant:4}Mortal Conviction
 ]],[[
 Malachai's Awakening
 Iron Mask
 Source: Upgraded from unique{Malachai's Simula} via prophecy{The Nightmare Awakens}
-Variant: Pre 3.7.0
-Variant: Current
 Requires Level 60
 (15–30)% increased Spell Damage
 +20 to Strength
@@ -958,7 +988,6 @@ Adds (42–54) to (78–88) Cold Damage to Spells while no Life is Reserved
 Adds (54–64) to (96–107) Fire Damage to Spells while no Life is Reserved
 Adds (5–14) to (160–173) Lightning Damage to Spells while no Life is Reserved
 Blood Magic
-{variant:2}Mortal Conviction
 ]],[[
 Mind of the Council
 Harlequin Mask

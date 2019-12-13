@@ -63,19 +63,6 @@ Requires Level 62, 180 Str
 {variant:2,3}You take 450 Chaos Damage per second for 3 seconds on Kill
 Gore Footprints
 ]],[[
-The Eternity Shroud
-Blood Raiment
-Shaper Item
-Source: Drops from unique{The Elder} (Uber)
-Requires Level 65, 107 Dex, 90 Int
-Implicits: 0
-Trigger Level 20 Glimpse of Eternity when Hit
-(100-150)% increased Evasion and Energy Shield
-+(70-100) to maximum Life
-+(17-23)% to Chaos Resistance
-Gain (3-5)% of Elemental Damage as Extra Chaos Damage per Shaper Item Equipped
-Hits ignore Enemy Monster Chaos Resistance if all Equipped Items are Shaper Items
-]],[[
 Greed's Embrace
 Golden Plate
 Requires Level 56, 106 Str
@@ -245,19 +232,21 @@ Variant: Pre 1.0.0
 Variant: Pre 2.0.0
 Variant: Pre 2.6.0
 Variant: {2_6}Pre 3.5.0
+Variant: Pre 3.9.0
 Variant: Current
 Requires Level 65, 197 Dex
 {variant:1,2,3}+(20-30) to Dexterity
-{variant:4.5}+(40-50) to Dexterity
+{variant:4.5,6}+(40-50) to Dexterity
 {variant:1,2,3}Adds 13 to 24 Cold Damage to Attacks
 {variant:4}Adds (50-60) to (70-80) Cold Damage to Attacks
 {variant:5}Adds (173-188) to (240-262) Cold Damage to Bow Attacks
+{variant:6}Adds (100-145) to (160-200) Cold Damage to Bow Attacks
 {variant:1}(80-120)% increased Evasion Rating
-{variant:2,3,4,5}(140-220)% increased Evasion Rating
+{variant:2,3,4,5,6}(140-220)% increased Evasion Rating
 25% increased Chill Duration on Enemies
 {variant:1,2}Acrobatics
-{variant:3,4,5}10% chance to Dodge Attacks
-{variant:3,4,5}10% chance to Dodge Spell Damage
+{variant:3,4,5,6}10% chance to Dodge Attacks
+{variant:3,4,5,6}10% chance to Dodge Spell Damage
 ]],[[
 Kintsugi
 Exquisite Leather
@@ -323,6 +312,22 @@ Requires Level 65, 197 Dex
 100% reduced Arctic Armour Mana Reservation
 Evasion Rating is increased by Uncapped Cold Resistance
 Phase Acrobatics
+]],[[
+The Queen's Hunger
+Vaal Regalia
+League: Betrayal
+Variant: Pre 3.8.0
+Variant: Current
+Energy Shield: (358-407)
+Movement Speed: -3%
+Requires Level 68, 194 Int
+Trigger Level 20 Bone Offering, Flesh Offering or Spirit Offering every 5 seconds
+Offering Skills Triggered this way also affect you
+{variant:1}Your Offerings have 25% reduced Effect on you
+(5-10)% increased Cast Speed
+(100-130)% increased Energy Shield
+(6-10)% increased maximum Life
+<Two Veiled Mods>
 ]],[[
 Yriel's Fostering
 Exquisite Leather
@@ -445,10 +450,10 @@ Enemies affected by your Spider's Webs have -10% to All Resistances
 ]],[[
 Garb of the Ephemeral
 Savant's Robe
-Fractured Item
 League: Synthesis
+Source: Drops from unique{Synthete Nightmare} in normal{The Cortex}
 Requires Level 56, 152 Int
-{fractured}(180-230)% increased Energy Shield
+(180-230)% increased Energy Shield
 +600 Strength and Intelligence Requirement
 +10 to maximum Divine Charges
 Gain a Divine Charge on Hit
@@ -607,16 +612,20 @@ Socketed Gems are Supported by level 5 Elemental Proliferation
 Vis Mortis
 Necromancer Silks
 Variant: Pre 2.6.0
+Variant: Pre 3.8.0
 Variant: Current
 Requires Level 59, 160 Int
+{variant:1}(100-120)% increased Energy Shield
+{variant:2,3}(200-220)% increased Energy Shield
 +(20-30) to maximum Mana
 {variant:1}(100-120)% increased Energy Shield
-{variant:2}(200-220)% increased Energy Shield
+{variant:2,3}(200-220)% increased Energy Shield
 Minions have 20% reduced Maximum Life
 Minions deal 15% increased Damage
-+1 to Maximum number of Spectres
+{variant:1,2}+1 to Maximum number of Spectres
 {variant:1}Minions gain Unholy Might for 5 seconds on Kill
 {variant:2}Minions gain Unholy Might for 10 seconds on Kill
+{variant:3}Minions gain (15-20)% of Elemental Damage as Extra Chaos Damage
 ]],[[
 Zahndethus' Cassock
 Sage's Robe
@@ -850,6 +859,8 @@ Requires Level 47, 69 Str, 69 Int
 Loreweave
 Elegant Ringmail
 Source: Vendor Recipe
+Variant: Pre 3.6.0
+Variant: Current
 Requires Level 64
 Has 6 Sockets
 Adds (4–10) to (14–36) Physical Damage to Attacks
@@ -860,12 +871,35 @@ Adds (4–10) to (14–36) Physical Damage to Attacks
 +(20–50) to maximum Mana
 (6–30)% increased Rarity of Items found
 (15–50)% increased Elemental Damage
-Your Maximum Resistances are (76–80)%
+{variant:1}Your Maximum Resistances are (76–80)%
+{variant:2}Your Maximum Resistances are (76–78)%
+]],[[
+Rotting Legion
+Loricated Ringmail
+Requires Level 58, 84 Str, 84 Int
+League: Blight
+Socketed Gems are Supported by Level 1 Meat Shield
+(100–140)% increased Armour and Energy Shield
++(50–80) to maximum Life
+(5–8)% increased Damage per Raised Zombie
+1% less Elemental Damage taken per Raised Zombie
+]],[[
+Sporeguard
+Saint's Hauberk
+Requires Level 67, 109 Str, 94 Int
+League: Blight
+Trigger Level 10 Contaminate when you Kill an Enemy
+(200–250)% increased Armour and Energy Shield
+(7–10)% increased maximum Life
++(17–23)% to Chaos Resistance
+Enemies on Fungal Ground you Kill Explode, dealing 5% of their Life as Chaos Damage
+You have Fungal Ground around you while stationary
+(Allies on your Fungal Ground gain 10% of Non-Chaos Damage as extra Chaos Damage. Enemies on your Fungal Ground deal 10% less Damage.)
 ]],[[
 Voll's Protector
 Holy Chainmail
 League: Legion
-Source: Drops from normal{Templar} legion
+Source: Drops from Templar Legion
 Variant: Pre 3.7.0
 Variant: Current
 Requires Level 35, 53 Str, 53 Int
@@ -929,19 +963,30 @@ Socketed Gems are Supported by Level 10 Lesser Poison
 (75-100)% increased Damage with Poison if you have at least 300 Dexterity
 (15-25)% increased Poison Duration if you have at least 150 Intelligence
 ]],[[
+The Eternity Shroud
+Blood Raiment
+Shaper Item
+Source: Drops from unique{The Elder} (Uber)
+Requires Level 65, 107 Dex, 90 Int
+Implicits: 0
+Trigger Level 20 Glimpse of Eternity when Hit
+(100-150)% increased Evasion and Energy Shield
++(70-100) to maximum Life
++(17-23)% to Chaos Resistance
+Gain (3-5)% of Elemental Damage as Extra Chaos Damage per Shaper Item Equipped
+Hits ignore Enemy Monster Chaos Resistance if all Equipped Items are Shaper Items
+]],[[
 Inpulsa's Broken Heart
 Sadist Garb
 Variant: Pre 3.5.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 68
 +(60–80) to maximum Life 
 (20–50)% increased Damage if you have Shocked an Enemy Recently 
-{variant:1,2}(25–40)% increased Effect of Shock
-{variant:3}(15–25)% increased Effect of Shock
+(25–40)% increased Effect of Shock 
 Unaffected by Shock 
 {variant:1}Shocked Enemies you Kill Explode, dealing (5–10)% of
-{variant:2,3}Shocked Enemies you Kill Explode, dealing 5% of
+{variant:2}Shocked Enemies you Kill Explode, dealing 5% of
 their Maximum Life as Lightning Damage which cannot Shock
 ]],[[
 The Restless Ward

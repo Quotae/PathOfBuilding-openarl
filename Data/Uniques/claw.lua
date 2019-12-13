@@ -1,4 +1,4 @@
--- Item data (c) Grinding Gear Games
+﻿-- Item data (c) Grinding Gear Games
 
 return {
 -- Weapon: Claw
@@ -19,10 +19,24 @@ Socketed Gems are Supported by level 12 Fortify
 Reflects (71-90) Physical Damage to Melee Attackers
 15% Chance to Block
 ]],[[
+Allure
+Vaal Claw
+Variant: {2_6}Pre 3.0.0
+Variant: Current
+Requires Level 66, 131 Dex, 95 Int
+2% of Physical Attack Damage Leeched as Life
+{variant:1}(80-100)% increased Physical Damage
+{variant:2}(110–130)% increased Physical Damage
+Adds (15-20) to (30-40) Physical Damage
+(8-12)% increased Attack Speed
+15% increased Movement Speed while Phasing
+{variant:1}You gain Phasing for 3 seconds on using a Vaal Skill
+{variant:2}You gain Phasing for 10 seconds on using a Vaal Skill
+]],[[
 Al Dhih
 Timeworn Claw
 League: Legion
-Source: Drops from normal{Maraketh} legion
+Source: Drops from Maraketh Legion
 Variant: Pre 2.0.0
 Variant: Pre 2.6.0
 Variant: {2_6}Pre 3.0.0
@@ -33,28 +47,14 @@ Implicits: 3
 {variant:1}+8 Life gained for each Enemy hit by Attacks
 {variant:2}2% of Physical Attack Damage Leeched as Life
 {variant:3,4,5}+19 Life gained for each Enemy hit by Attacks
+{variant:4}Trigger Level 1 Abyssal Cry on Hit
 {variant:1,2,3,4}Socketed Gems have 10% chance to cause Enemies to Flee on Hit
-{variant:4,5}Trigger Level 1 Abyssal Cry on Hit
 {variant:1}(60-80)% increased Physical Damage
 {variant:2,3,4,5}(100-120)% increased Physical Damage
 3% of Physical Attack Damage Leeched as Life
 {variant:1,2,3,4}10% reduced Enemy Stun Threshold with this Weapon
 {variant:5}50% increased Warcry Buff Effect
 {variant:5}Warcry Skills' Cooldown Time is 2 seconds
-]],[[
-Allure
-Vaal Claw
-Variant: {2_6}Pre 3.0.0
-Variant: Current
-Requires Level 66, 131 Dex, 95 Int
-2% of Physical Attack Damage Leeched as Life
-{variant:1}(80-100)% increased Physical Damage
-{variant:2}(110-130)% increased Physical Damage
-Adds (15-20) to (30-40) Physical Damage
-(8-12)% increased Attack Speed
-15% increased Movement Speed while Phasing
-{variant:1}You gain Phasing for 3 seconds on using a Vaal Skill
-{variant:2}You gain Phasing for 10 seconds on using a Vaal Skill
 ]],[[
 Bloodseeker
 Hellion's Paw
@@ -63,7 +63,7 @@ Variant: Current
 Requires Level 62, 131 Dex, 95 Int
 1.6% of Physical Attack Damage Leeched as Life
 {variant:1}(100-120)% increased Physical Damage
-{variant:2}(150-170)% increased Physical Damage
+{variant:2}(150–170)% increased Physical Damage
 Adds 10 to 12 Physical Damage
 5% increased Attack Speed
 1.2% of Physical Attack Damage Leeched as Life
@@ -162,17 +162,15 @@ Izaro's Dilemma
 Imperial Claw
 Source: Drops in The Lord's Labyrinth
 Variant: Pre 2.6.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 68, 131 Dex, 95 Int
 Implicits: 2
 {variant:1}+25 Life gained for each Enemy hit by Attacks
-{variant:2,3}+46 Life gained for each Enemy hit by Attacks
+{variant:2}+46 Life gained for each Enemy hit by Attacks
 (40-60)% increased Physical Damage
 Adds 20 to 50 Physical Damage
 (10-15)% increased Attack Speed
-{variant:1,2}+(250-350) to Accuracy Rating
-{variant:3}+(300-400) to Accuracy Rating
++(250-350) to Accuracy Rating
 100% increased Physical Damage while Frozen
 ]],[[
 Last Resort
@@ -216,7 +214,7 @@ Implicits: 2
 +1 to Level of Socketed Dexterity Gems
 {variant:3}Socketed Gems are Supported by level 10 Faster Attacks
 {variant:1,2}(100-120)% increased Physical Damage
-{variant:3}(160-180)% increased Physical Damage
+{variant:3}(160–180)% increased Physical Damage
 (10-15)% increased Attack Speed
 25% increased Stun Recovery
 Hits can't be Evaded
@@ -265,15 +263,12 @@ Critical Strikes do not always Freeze
 ]],[[
 The Wasp Nest
 Throat Stabber
-Variant: Pre 3.7.0
-Variant: Current
 Requires Level 60, 113 Dex, 113 Int
 +40 Life gained for each Enemy hit by Attacks
 (150-170)% increased Physical Damage
 (20-25)% increased Attack Speed
 (20-25)% increased Critical Strike Chance
-{variant:1}+(180-200) to Accuracy Rating
-{variant:2}+(330-350) to Accuracy Rating
++(180-200) to Accuracy Rating
 20% chance to Poison on Hit
 Attacks with this Weapon deal 80-120 added Chaos Damage against
 Enemies affected by at least 5 Poisons

@@ -312,6 +312,15 @@ return {
 ["aura_effect_+%"] = {
 	mod("AuraEffect", "INC", nil),
 },
+["elusive_effect_+%"] = {
+	mod("ElusiveEffect", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Buff" }),
+},
+["cannot_be_stunned_while_leeching"] = {
+	mod("AvoidStun", "BASE", 100, { type = "Condition", var = "Leeching"}),
+},
+["life_leech_does_not_stop_at_full_life"] = {
+	flag("CanLeechLifeOnFullLife"),
+},
 
 --
 -- Offensive modifiers
@@ -362,6 +371,13 @@ return {
 },
 ["critical_strike_multiplier_+_per_power_charge"] = {
 	mod("CritMultiplier", "BASE", nil, 0, 0, { type = "Multiplier", var = "PowerCharge" }),
+},
+["additional_critical_strike_chance_permyriad_while_affected_by_elusive"] = {
+	mod("CritChance", "BASE", nil, 0, 0, { type = "Condition", var = "Elusive" }, { type = "Condition", varList = { "UsingClaw", "UsingDagger"} } ),
+	div = 100,
+},
+["nightblade_elusive_grants_critical_strike_multiplier_+_to_supported_skills"] = {
+	mod("CritMultiplier", "BASE", nil, 0, 0, { type = "Condition", var = "Elusive" }, { type = "Condition", varList = { "UsingClaw", "UsingDagger" } } ),
 },
 -- Duration
 ["buff_effect_duration_+%_per_removable_endurance_charge"] = {
@@ -490,6 +506,9 @@ return {
 },
 ["global_maximum_added_chaos_damage"] = {
 	mod("ChaosMax", "BASE", nil),
+},
+["support_slashing_damage_+%_final_from_distance"] = {
+	mod("Damage", "MORE", nil, bit.bor(ModFlag.Attack, ModFlag.Melee), 0, { type = "MeleeProximity", ramp = {1,0} }) 
 },
 -- Conversion
 ["physical_damage_%_to_add_as_lightning"] = {
@@ -701,6 +720,9 @@ return {
 ["always_pierce"] = {
 	flag("PierceAllTargets"),
 },
+["cannot_pierce"] = {
+	flag("CannotPierce"),
+},
 ["base_number_of_additional_arrows"] = {
 	mod("ProjectileCount", "BASE", nil),
 },
@@ -908,7 +930,13 @@ return {
 	mod("CritChance", "BASE", nil, 0, 0, { type = "PerStat", stat = "EnergyShieldOnWeapon 2", 	div = 10, }),
 	div = 100,
 },
-
+-- Impale
+["attacks_impale_on_hit_%_chance"] = {
+    mod("ImpaleChance", "BASE", nil, 0, 0)
+},
+["impale_debuff_effect_+%"] = {
+    mod("ImpaleEffect", "INC", nil, 0, 0)
+},
 --
 -- Spell modifiers
 --
@@ -1023,7 +1051,8 @@ return {
 	mod("MinionModifier", "LIST", { mod = mod("ElementalResist", "BASE", nil) }),
 },
 ["minion_elemental_resistance_30%"] = {
-	mod("MinionModifier", "LIST", { mod = mod("ElementalResist", "BASE", 30) }),
+	mod("MinionModifier", "LIST", { mod = mod("ElementalResist", "BASE", nil) }),
+	value=30
 },
 ["summon_fire_resistance_+"] = {
 	mod("MinionModifier", "LIST", { mod = mod("FireResist", "BASE", nil) }),

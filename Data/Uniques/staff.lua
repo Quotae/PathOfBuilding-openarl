@@ -11,8 +11,8 @@ Requires Level 66, 158 Str, 113 Int
 Implicits: 2
 {variant:1}12% Chance to Block
 {variant:2}18% Chance to Block
-{variant:1}+1 to Level of Socketed Lightning Gems
-{variant:2}+2 to Level of Socketed Lightning Gems
+{variant:1}+1 to Level of all Lightning Gems
+{variant:2}+2 to Level of all Lightning Gems
 +(80-120) to Intelligence
 (30-50)% increased Lightning Damage
 100% increased Shock Duration on Enemies
@@ -27,8 +27,8 @@ Requires Level 66, 158 Str, 113 Int
 Implicits: 2
 {variant:1}12% Chance to Block
 {variant:2}18% Chance to Block
-{variant:1}+1 to Level of Socketed Lightning Gems
-{variant:2}+2 to Level of Socketed Lightning Gems
+{variant:1}+1 to Level of all Lightning Gems
+{variant:2}+2 to Level of all Lightning Gems
 +(80-120) to Intelligence
 (30-50)% increased Lightning Damage
 15% chance to Shock
@@ -43,8 +43,8 @@ Requires Level 66, 158 Str, 113 Int
 Implicits: 2
 {variant:1}12% Chance to Block
 {variant:2}18% Chance to Block
-{variant:1}+1 to Level of Socketed Lightning Gems
-{variant:2}+2 to Level of Socketed Lightning Gems
+{variant:1}+1 to Level of all Lightning Gems
+{variant:2}+2 to Level of all Lightning Gems
 +(80-120) to Intelligence
 (30-50)% increased Lightning Damage
 +5% to Maximum Lightning Resistance
@@ -59,8 +59,8 @@ Requires Level 66, 158 Str, 113 Int
 Implicits: 2
 {variant:1}12% Chance to Block
 {variant:2}18% Chance to Block
-{variant:1}+1 to Level of Socketed Lightning Gems
-{variant:2}+2 to Level of Socketed Lightning Gems
+{variant:1}+1 to Level of all Lightning Gems
+{variant:2}+2 to Level of all Lightning Gems
 +(80-120) to Intelligence
 (30-50)% increased Lightning Damage
 Adds (5-15) to (100-140) Lightning Damage to Spells
@@ -86,23 +86,20 @@ Variant: Pre 3.5.0
 Variant: Current
 Requires Level: 62
 18% Chance to Block 
-+2 to Level of Socketed Chaos Gems
++2 to Level of all Chaos Spell Skill Gems
 {variant:1}(60–80)% increased Chaos Damage
 {variant:2}(20–30)% increased Chaos Damage
-{variant:2}+(40-55)% to Non-Ailment Chaos Damage over Time Multiplier
+{variant:2}+(40-55)% to Chaos Damage over Time Multiplier
 2% increased Cast Speed per Power Charge
 Gain a Power Charge after spending a total of 200 Mana
 2 Mana Regenerated per Second per Power Charge
 ]],[[
 Disintegrator
-Maelström Staff
+Maelstrom Staff
 Source: Drops from unique{The Elder} (Uber)
-Variant: Pre 3.7.0
-Variant: Current
 Requires Level 64
 20% Chance to Block
-{variant:1}Adds (270–300) to (340–380) Physical Damage
-{variant:2}Adds (250–280) to (315–355) Physical Damage
+Adds (270–300) to (340–380) Physical Damage
 Adds (376–400) to (568–600) Physical Damage to Spells
 +1 to Maximum Siphoning Charges per Elder or Shaper Item Equipped
 25% chance to gain a Siphoning Charge when you use a Skill
@@ -134,12 +131,20 @@ Gain (10-20)% of Elemental Damage as Extra Chaos Damage
 ]],[[
 Dying Breath
 Coiled Staff
-Variant: Pre 2.6.0
-Variant: Current
-Requires Level 23, 43 Str, 43 Int
-Implicits: 2
-{variant:1}18% Chance to Block
-{variant:2}20% Chance to Block
+Requires Level 23, 34 Str, 34 Int
+(18-20)% Chance to Block
+18% increased Cast Speed
+18% increased maximum Mana
+18% increased Area of Effect of Aura Skills
+18% increased Area of Effect of Curse Skills
+Nearby Enemies have 18% increased Effect of Curses on them
+Nearby allies gain 18% increased Damage
+18% increased effect of Non-Curse Auras you Cast
+]],[[
+Dying Breath
+Iron Staff
+Requires Level 13, 27 Str, 27 Int
+18% Chance to Block
 18% increased Cast Speed
 18% increased maximum Mana
 18% increased Area of Effect of Aura Skills
@@ -162,16 +167,22 @@ Adds (160-185) to (200-225) Physical Damage
 Femurs of the Saints
 Primordial Staff
 Variant: Pre 2.6.0
+Variant: Pre 3.8.0
 Variant: Current
 Requires Level 58, 99 Str, 99 Int
 Implicits: 2
 {variant:1}12% Chance to Block
-{variant:2}18% Chance to Block
+{variant:2,3}+18% Chance to Block Attack Damage while wielding a Staff
 +2 to Level of Socketed Minion Gems
-Minions Regenerate (1.5-2.5)% Life per Second
-2% increased Minion Attack and Cast Speed per Skeleton you own
-2% increased Minion Duration per Zombie you own
-(8-12)% increased Minion Damage per Spectre you own
+{variant:3}Minions deal (60-80)% increased Damage
+{variant:3}+1% Chance to Block Attack Damage per Summoned Skeleton
+{variant:1,2}2% increased Minion Attack and Cast Speed per Skeleton you own
+{variant:1,2}Minions Regenerate (1.5-2.5)% Life per Second
+{variant:3}2% increased Attack and Cast Speed per Summoned Raging Spirit
+{variant:1,2}2% increased Minion Duration per Zombie you own
+{variant:1,2}(8-12)% increased Minion Damage per Spectre you own
+{variant:3}Regenerate 0.6% of Life per second for each Raised Zombie
+{variant:3}30% increased Mana Regeneration Rate per Raised Spectre
 ]],[[
 Fencoil
 Gnarled Branch
@@ -210,15 +221,13 @@ Has no Sockets
 Hegemony's Era
 Judgement Staff
 Variant: Pre 2.6.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 68, 113 Str, 113 Int
 Implicits: 2
 {variant:1}12% Chance to Block
-{variant:2,3}18% Chance to Block
+{variant:2}18% Chance to Block
 6% Chance to Block
-{variant:1,2}Adds (180-190) to (190-220) Physical Damage
-{variant:3}Adds (165-175) to (185-205) Physical Damage
+Adds (180-190) to (190-220) Physical Damage
 (12-16)% increased Attack Speed
 (20-30)% increased Critical Strike Chance
 +1 to Maximum Power Charges
@@ -242,17 +251,8 @@ Damage Penetrates 15% of Fire Resistance if you have Blocked Recently
 ]],[[
 Pillar of the Caged God
 Iron Staff
-Variant: Current
-Requires Level 13, 27 Str, 27 Int
-18% Chance to Block Attack Damage while wielding a Staff
-1% increased Area of Effect of Area Skills per 20 Intelligence
-1% increased Attack Speed per 10 Dexterity
-16% increased Physical Weapon Damage per 10 Strength
-]],[[
-Pillar of the Caged God
-Long Staff
 Variant: Pre 2.6.0
-Variant: Pre 3.7.0
+Variant: Current
 Requires Level 13, 27 Str, 27 Int
 Implicits: 2
 {variant:1}12% Chance to Block
@@ -264,7 +264,7 @@ Implicits: 2
 Pledge of Hands
 Judgement Staff
 League: Legion
-Source: Drops from normal{Vaal} legion
+Source: Drops from Vaal Legion
 Variant: Pre 2.6.0
 Variant: Current
 Requires Level 68, 113 Str, 113 Int
@@ -312,17 +312,19 @@ The Searing Touch
 Lathi
 Variant: Pre 2.6.0
 Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.8.0
 Variant: Current
 Requires Level 60, 113 Str, 113 Int
 Implicits: 2
 {variant:1}12% Chance to Block
-{variant:2,3}18% Chance to Block
-+2 to Level of Socketed Fire Gems
+{variant:2,3,4}18% Chance to Block
++2 to Level of all Fire Spell Skill Gems
 {variant:1,2}(30-50)% increased Spell Damage
 {variant:1,2}(20-40)% increased Fire Damage
-{variant:3}(70–90)% increased Fire Damage
+{variant:3,4}(70–90)% increased Fire Damage
 10% increased Cast Speed
-70% increased Burning Damage
+{variant:1,2,3}70% increased Burning Damage
+{variant:4}+(40-60)% to Fire Damage over Time Multiplier
 ]],[[
 The Searing Touch
 Long Staff
@@ -402,8 +404,8 @@ Requires Level 64, 113 Str, 113 Int
 Implicits: 2
 {variant:1,2}18% Chance to Block
 {variant:3}20% Chance to Block
-{variant:1,2}+1 to Level of Socketed Cold Gems
-{variant:3}+2 to Level of Socketed Cold Gems
+{variant:1,2}+1 to Level of all Cold Spell Skill Gems
+{variant:3}+2 to Level of all Cold Spell Skill Gems
 {variant:1}(40-50)% increased Spell Damage
 {variant:2,3}(50-60)% increased Spell Damage
 (40-50)% increased Cold Damage
@@ -414,16 +416,19 @@ Enemies Frozen by you take 20% increased Damage
 Tremor Rod
 Military Staff
 Variant: Pre 2.6.0
+Variant: Pre 3.8.0
 Variant: Current
 Requires Level 45, 78 Str, 78 Int
 Implicits: 2
 {variant:1}12% Chance to Block
-{variant:2}18% Chance to Block
-Socketed Gems are Supported by level 10 Remote Mine
-35% less Mine Damage
+{variant:2,3}18% Chance to Block
+{variant:3}+2 to Level of Socketed Spell Gems
+{variant:1,2}Socketed Gems are Supported by level 10 Remote Mine
+{variant:3}Socketed Gems are Supported by Level 10 Blastchain Mine
+{variant:1,2}35% less Mine Damage
 (40-60)% increased Spell Damage
 (15-20)% reduced Enemy Stun Threshold
-(40-60)% increased Mine Laying Speed
+{variant:1,2}(40-60)% increased Mine Laying Speed
 Mines can be Detonated an additional time
 ]],[[
 The Whispering Ice
@@ -449,7 +454,7 @@ Requires Level 28, 43 Str, 43 Int
 Implicits: 2
 {variant:1}18% Chance to Block
 {variant:2}20% Chance to Block
-+1 to Level of Socketed Gems
++1 to Level of all Spell Skill Gems
 15% Chance to Block
 (60-80)% increased Spell Damage
 +(70-100) to Maximum Energy Shield

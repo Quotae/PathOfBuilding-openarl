@@ -1189,9 +1189,9 @@ skills["MinionInstability"] = {
 		skill("showAverage", true),
 		skill("radius", 22),
 	},
-	qualityStats = {
-	},
 	stats = {
+	},
+	levelMods = {
 	},
 	levels = {
 		[1] = { },

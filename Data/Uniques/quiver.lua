@@ -122,7 +122,6 @@ Adds 0 to 3 Lightning Damage to Attacks per 10 Intelligence
 ]],[[
 Maloney's Mechanism
 Ornate Quiver
-League: Synthesis
 Requires Level 45
 Has 1 Socket
 Has 2 Sockets
@@ -211,6 +210,7 @@ Adds (13-18) to (26-32) Chaos Damage to Attacks
 ]],[[
 Voidfletcher
 Penetrating Arrow Quiver
+Elder
 Source: Drops from unique{The Elder} (Uber)
 Requires Level 68
 Arrows Pierce an additional Target

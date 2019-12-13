@@ -150,24 +150,17 @@ local function doActorAttribsPoolsConditions(env, actor)
 	end
 
 	-- Calculate attributes
-	local calcluateAttributes = function()
-		for _, stat in pairs({"Str","Dex","Int"}) do
-			output[stat] = m_max(round(calcLib.val(modDB, stat)), 0)
-			if breakdown then
-				breakdown[stat] = breakdown.simple(nil, nil, output[stat], stat)
-			end
+	for _, stat in pairs({"Str","Dex","Int"}) do
+		output[stat] = m_max(round(calcLib.val(modDB, stat)), 0)
+		if breakdown then
+			breakdown[stat] = breakdown.simple(nil, nil, output[stat], stat)
 		end
-		
-		output.LowestAttribute = m_min(output.Str, output.Dex, output.Int)
-		condList["DexHigherThanInt"] = output.Dex > output.Int
-		condList["StrHigherThanDex"] = output.Str > output.Dex
-		condList["IntHigherThanStr"] = output.Int > output.Str
-		condList["StrHigherThanInt"] = output.Str > output.Int
 	end
 
-	-- Calculate twice because of circular dependency
-	calcluateAttributes()
-	calcluateAttributes()
+	output.LowestAttribute = m_min(output.Str, output.Dex, output.Int)
+	condList["DexHigherThanInt"] = output.Dex > output.Int
+	condList["StrHigherThanDex"] = output.Str > output.Dex
+	condList["IntHigherThanStr"] = output.Int > output.Str
 
 	-- Add attribute bonuses
 	if not modDB:Flag(nil, "NoStrBonusToLife") then
@@ -256,7 +249,7 @@ local function doActorMisc(env, actor)
 	output.PowerChargesMin = modDB:Sum("BASE", nil, "PowerChargesMin")
 	output.PowerChargesMax = modDB:Sum("BASE", nil, "PowerChargesMax")
 	output.FrenzyChargesMin = modDB:Sum("BASE", nil, "FrenzyChargesMin")
-	output.FrenzyChargesMax = modDB:Sum("BASE", nil, "FrenzyChargesMax")
+	output.FrenzyChargesMax = modDB:Flag(nil, "MaximumFrenzyChargesIsMaximumPowerCharges") and output.PowerChargesMax or modDB:Sum("BASE", nil, "FrenzyChargesMax")
 	output.EnduranceChargesMin = modDB:Sum("BASE", nil, "EnduranceChargesMin")
 	output.EnduranceChargesMax = modDB:Flag(nil, "MaximumEnduranceChargesIsMaximumFrenzyCharges") and output.FrenzyChargesMax or modDB:Sum("BASE", nil, "EnduranceChargesMax")
 	output.SiphoningChargesMax = modDB:Sum("BASE", nil, "SiphoningChargesMax")
@@ -360,6 +353,13 @@ local function doActorMisc(env, actor)
 			modDB:NewMod("Speed", "INC", 20, "Her Embrace")
 			modDB:NewMod("MovementSpeed", "INC", 20, "Her Embrace")
 		end
+		if modDB:Flag(nil, "Elusive") then
+			local effect = 1 + modDB:Sum("INC", nil, "ElusiveEffect", "BuffEffectOnSelf") / 100
+			condList["Elusive"] = true
+			modDB:NewMod("AttackDodgeChance", "BASE", m_floor(20 * effect), "Elusive")
+			modDB:NewMod("SpellDodgeChance", "BASE", m_floor(20 * effect), "Elusive")
+			modDB:NewMod("MovementSpeed", "INC", m_floor(40 * effect), "Elusive")
+		end
 		if modDB:Flag(nil, "Chill") then
 			local effect = m_max(m_floor(30 * calcLib.mod(modDB, nil, "SelfChillEffect")), 0)
 			modDB:NewMod("ActionSpeed", "INC", effect * (modDB:Flag(nil, "SelfChillEffectIsReversed") and 1 or -1), "Chill")
@@ -367,6 +367,11 @@ local function doActorMisc(env, actor)
 		if modDB:Flag(nil, "Freeze") then
 			local effect = m_max(m_floor(70 * calcLib.mod(modDB, nil, "SelfChillEffect")), 0)
 			modDB:NewMod("ActionSpeed", "INC", -effect, "Freeze")
+		end
+		if modDB:Flag(nil, "CanLeechLifeOnFullLife") then
+			condList["Leeching"] = true
+			condList["LeechingLife"] = true
+			env.configInput.conditionLeeching = true
 		end
 	end	
 end
@@ -484,6 +489,17 @@ function calcs.perform(env)
 	end
 	if env.aegisModList then
 		env.player.itemList["Weapon 2"] = nil
+	end
+
+	for _, activeSkill in ipairs(env.player.activeSkillList) do
+		if activeSkill.skillFlags.golem then
+			local limit = activeSkill.skillModList:Sum("BASE", nil, "ActiveGolemLimit")
+			output.ActiveGolemLimit = m_max(limit, output.ActiveGolemLimit or 0)
+		end
+		if activeSkill.skillFlags.totem then
+			local limit = activeSkill.skillModList:Sum("BASE", nil, "ActiveTotemLimit")
+			output.ActiveTotemLimit = m_max(limit, output.ActiveTotemLimit or 0)
+		end
 	end
 
 	local breakdown
@@ -752,6 +768,7 @@ function calcs.perform(env)
 				end
 				if env.mode_effective and stackCount > 0 then
 					activeSkill.debuffSkill = true
+					modDB.conditions["AffectedBy"..buff.name:gsub(" ","")] = true
 					local srcList = new("ModList")
 					local mult = 1
 					if buff.type == "AuraDebuff" then

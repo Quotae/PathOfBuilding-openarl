@@ -45,18 +45,20 @@ Berek's Grip
 Two-Stone Ring
 League: Domination, Nemesis
 Variant: Pre 2.6.0
+Variant: Pre 3.8.0
 Variant: Current
 Requires Level 20
 +(12-16)% to Cold and Lightning Resistances
 {variant:1}(10-15)% increased Cold Damage
-{variant:2}(25-30)% increased Cold Damage
+{variant:2,3}(25-30)% increased Cold Damage
 {variant:1}Adds 1 to (1-50) Lightning Damage to Attacks
-{variant:2}Adds 1 to (50-70) Lightning Damage to Spells and Attacks
+{variant:2,3}Adds 1 to (50-70) Lightning Damage to Spells and Attacks
 +(30-40) to maximum Life
-{variant:1}1% of Damage against Frozen Enemies Leeched as Life
-{variant:2}1% of Damage against Shocked Enemies Leeched as Life
-{variant:1}1% of Damage against Shocked Enemies Leeched as Mana
-{variant:2}1% of Damage against Frozen Enemies Leeched as Mana
+{variant:1}1% of Damage Leeched as Life against Frozen Enemies
+{variant:2,3}1% of Damage Leeched as Life against Shocked Enemies
+{variant:1}1% of Damage Leeched as Mana against Shocked Enemies
+{variant:2}1% of Damage Leeched as Mana against Frozen Enemies
+{variant:3}1% of Damage Leeched as Energy Shield against Frozen Enemies
 ]],[[
 Berek's Pass
 Two-Stone Ring
@@ -178,16 +180,18 @@ Your spells have 100% chance to Shock against Frozen enemies
 ]],[[
 Circle of Anguish
 Ruby Ring
-Fractured item
 League: Synthesis
-Variant: Mana Reservation
-Variant: Fire Damage
-Variant: Buff Effect
-Variant: Max Fire Resistance
-Variant: Fire Resistance
+Source: Drops from unique{Altered/Augmented/Rewritten/Twisted Synthete}
 Requires Level 52
+Has Alt Variant: true
+Variant: Herald of Ash: Mana Reservation
+Variant: Herald of Ash: Fire Damage
+Variant: Herald of Ash: Buff Effect
+Variant: Herald of Ash: Max Resistance
+Variant: Herald of Ash: Fire Resistance
+Limited to: 1
 +(20-30)% to Fire Resistance
-{fractured}+(20-30) to Strength
++(20-30) to Strength
 Adds (20-25) to (26-35) Fire Damage
 +(20-30)% to Fire Resistance
 {variant:1}Herald of Ash has (40-30)% reduced Mana Reservation
@@ -195,20 +199,21 @@ Adds (20-25) to (26-35) Fire Damage
 {variant:3}Herald of Ash has (70-100)% increased Buff Effect
 {variant:4}+1% to maximum Fire Resistance while affected by Herald of Ash
 {variant:5}+(50-60)% to Fire Resistance while affected by Herald of Ash
-When used in the Synthesiser, the new item will have an additional Herald Modifier
 ]],[[
 Circle of Fear
 Sapphire Ring
-Fractured Item
 League: Synthesis
-Variant: Mana Reservation
-Variant: Cold Damage
-Variant: Buff Effect
-Variant: Max Cold Resistance
-Variant: Cold Resistance
+Source: Drops from unique{Altered/Augmented/Rewritten/Twisted Synthete}
 Requires Level 52
+Has Alt Variant: true
+Variant: Herald of Ice: Mana Reservation
+Variant: Herald of Ice: Cold Damage
+Variant: Herald of Ice: Buff Effect
+Variant: Herald of Ice: Max Resistance
+Variant: Herald of Ice: Cold Resistance
+Limited to: 1
 +(20-30)% to Cold Resistance
-{fractured}+(20-30) to Dexterity
++(20-30) to Dexterity
 Adds (20-25) to (26-35) Cold Damage
 +(20-30)% to Cold Resistance
 {variant:1}Herald of Ice has (40-30)% reduced Mana Reservation
@@ -216,20 +221,21 @@ Adds (20-25) to (26-35) Cold Damage
 {variant:3}Herald of Ice has (70-100)% increased Buff Effect
 {variant:4}+1% to maximum Cold Resistance while affected by Herald of Ice
 {variant:5}+(50-60)% to Cold Resistance while affected by Herald of Ice
-When used in the Synthesiser, the new item will have an additional Herald Modifier
 ]],[[
 Circle of Guilt
 Iron Ring
-Fractured Item
 League: Synthesis
-Variant: Mana Reservation
-Variant: Physical Damage
-Variant: Buff Effect
-Variant: Sentinels of Purity Damage
-Variant: Physical Damage Reduction
+Source: Drops from unique{Altered/Augmented/Rewritten/Twisted Synthete}
 Requires Level 52
+Has Alt Variant: true
+Variant: Herald of Purity: Mana Reservation
+Variant: Herald of Purity: Physical Damage
+Variant: Herald of Purity: Buff Effect
+Variant: Herald of Purity: Sentinal Damage
+Variant: Herald of Purity: Damage Reduction
+Limited to: 1
 Adds 1 to 4 Physical Damage to Attacks
-{fractured}+(10-20) to all Attributes
++(20-30) to all Attributes
 Adds (8-10) to (13-15) Physical Damage
 +(350-400) to Armour
 {variant:1}Herald of Purity has (40-30)% reduced Mana Reservation
@@ -237,41 +243,43 @@ Adds (8-10) to (13-15) Physical Damage
 {variant:3}Herald of Purity has (70-100)% increased Buff Effect
 {variant:4}Sentinels of Purity deal (70-100)% increased Damage
 {variant:5}4% additional Physical Damage Reduction while affected by Herald of Purity
-When used in the Synthesiser, the new item will have an additional Herald Modifier
 ]],[[
 Circle of Nostalgia
 Amethyst Ring
-Fractured Item
 League: Synthesis
-Variant: Mana Reservation
-Variant: Chaos Damage
-Variant: Buff Effect
-Variant: Agony Crawler Damage
-Variant: Chaos Resistance
+Source: Drops from unique{Altered/Augmented/Rewritten/Twisted Synthete}
 Requires Level 52
+Has Alt Variant: true
+Variant: Herald of Agony: Mana Reservation
+Variant: Herald of Agony: Chaos Damage
+Variant: Herald of Agony: Buff Effect
+Variant: Herald of Agony: Agony Damage
+Variant: Herald of Agony: Chaos Resistance
+Limited to: 1
 +(9-13)% to Chaos Resistance
-{fractured}+(10-20) to all Attributes
-Adds (15-20) to (21-30) Chaos Damage
++(10-20) to all Attributes
+Adds (15-20) to (21-30) Physical Damage
 +(17-23)% to Chaos Resistance
 {variant:1}Herald of Agony has (40-30)% reduced Mana Reservation
 {variant:2}(40-60)% increased Chaos Damage while affected by Herald of Agony
 {variant:3}Herald of Agony has (70-100)% increased Buff Effect
 {variant:4}Agony Crawler deals (70-100)% increased Damage
 {variant:5}+(31-43)% to Chaos Resistance while affected by Herald of Agony
-When used in the Synthesiser, the new item will have an additional Herald Modifier
 ]],[[
 Circle of Regret
 Topaz Ring
-Fractured Item
 League: Synthesis
-Variant: Mana Reservation
-Variant: Lightning Damage
-Variant: Buff Effect
-Variant: Max Lightning Resistance
-Variant: Lightning Resistance
+Source: Drops from unique{Altered/Augmented/Rewritten/Twisted Synthete}
 Requires Level 52
+Has Alt Variant: true
+Variant: Herald of Thunder: Mana Reservation
+Variant: Herald of Thunder: Lightning Damage
+Variant: Herald of Thunder: Buff Effect
+Variant: Herald of Thunder: Max Resistance
+Variant: Herald of Thunder: Lightning Resistance
+Limited to: 1
 +(20-30)% to Lightning Resistance
-{fractured}+(20-30) to Intelligence
++(20-30) to Intelligence
 Adds 1 to (48-60) Lightning Damage
 +(20-30)% to Lightning Resistance
 {variant:1}Herald of Thunder has (40-30)% reduced Mana Reservation
@@ -279,7 +287,6 @@ Adds 1 to (48-60) Lightning Damage
 {variant:3}Herald of Thunder has (70-100)% increased Buff Effect
 {variant:4}+1% to maximum Lightning Resistance while affected by Herald of Thunder
 {variant:5}+(50-60)% to Lightning Resistance while affected by Herald of Thunder
-When used in the Synthesiser, the new item will have an additional Herald Modifier
 ]],[[
 Death Rush
 Amethyst Ring
@@ -299,7 +306,7 @@ Requires Level 46
 ]],[[
 Doedre's Damning
 Paua Ring
-+(20-25) to maximum Mana
++(20-30) to maximum Mana
 +(5-10) to Intelligence
 +5% to all Elemental Resistances
 +5 Mana Gained on Kill
@@ -321,19 +328,21 @@ Cannot be Frozen
 Emberwake
 Ruby Ring
 Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.9.0
 Variant: Current
 Requires Level 16
 +(20-30)% to Fire Resistance
 {variant:1}(15-25)% increased Fire Damage
-{variant:2}(30–40)% increased Fire Damage
+{variant:2,3}(30–40)% increased Fire Damage
 (5-10)% increased Cast Speed
 {variant:1}5% chance to Ignite
-{variant:2}10% chance to Ignite
+{variant:2,3}10% chance to Ignite
 {variant:1}You can inflict up to 300 Ignites on an Enemy
-{variant:2}You can inflict an additional Ignite on an Enemy
+{variant:2,3}You can inflict an additional Ignite on an Enemy
 {variant:1}Your Critical Strikes do not deal extra Damage
 {variant:1}80% less Burning Damage
 {variant:2}Ignited Enemies Burn 65% slower
+{variant:3}Ignited Enemies Burn 50% slower
 ]],[[
 Essence Worm
 Unset Ring
@@ -375,6 +384,18 @@ Has 1 Socket
 Consumes Socketed Support Gems when they reach Maximum Level
 Can Consume 4 Support Gems
 Has not Consumed any Gems
+]],[[
+Icefang Orbit
+Iron Ring
+Requires Level: 49
+League: Blight
+Adds 1 to 4 Physical Damage to Attacks
++(20–30) to Dexterity
+25% chance to Poison on Hit
+(40–60)% increased Damage with Poison
+You are Chilled while you are Poisoned
+Non-Chilled Enemies you Poison are Chilled
+Poisoned Enemies you Kill with Hits Shatter
 ]],[[
 Kaom's Sign
 Coral Ring
@@ -566,19 +587,19 @@ Perandus Signet
 Paua Ring
 Variant: Pre 2.0.0
 Variant: Current
-+(20-25) to maximum Mana
++(20-30) to maximum Mana
 +(25-30) to maximum Mana
 (45-65)% increased Mana Regeneration Rate
 {variant:1}3% increased Experience gain
 {variant:2}2% increased Experience gain
-{variant:1}3% increased Intelligence for each Unique Item you have equipped
-{variant:2}2% increased Intelligence for each Unique Item you have equipped
+{variant:1}3% increased Intelligence for each Unique Item Equipped
+{variant:2}2% increased Intelligence for each Unique Item Equipped
 3% additional chance for Slain monsters to drop Scrolls of Wisdom
 ]],[[
 Praxis
 Paua Ring
 Requires Level 22
-+(20-25) to maximum Mana
++(20-30) to maximum Mana
 +(30-60) to maximum Mana
 (3-6) Mana Regenerated per second
 −(4-8) to Mana Cost of Skills
@@ -698,18 +719,21 @@ Coral Ring
 Variant: Pre 2.0.0
 Variant: Pre 2.6.0
 Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.9.0
 Variant: Current
 Requires Level 45
 +(20-30) to maximum Life
 {variant:1,2,3}(20-30)% increased Elemental Damage with Weapons
-{variant:4}(20-30)% increased Elemental Damage with Attack Skills
+{variant:4,5}(20-30)% increased Elemental Damage with Attack Skills
 Adds (8-15) to (20-28) Fire Damage to Attacks
 {variant:1}(20-40)% reduced Rarity of Items found
-{variant:2,3,4}(10-20)% reduced Rarity of Items found
+{variant:2,3,4,5}(10-20)% reduced Rarity of Items found
 {variant:1,2}Left ring slot: 30% reduced Reflected Elemental Damage taken
 {variant:3,4}Left ring slot: 40% reduced Reflected Elemental Damage taken
+{variant:5}Left ring slot: 80% reduced Reflected Elemental Damage taken
 {variant:1,2}Right ring slot: 30% reduced Reflected Physical Damage taken
 {variant:3,4}Right ring slot: 40% reduced Reflected Physical Damage taken
+{variant:5}Right ring slot: 80% reduced Reflected Physical Damage taken
 ]],[[
 Snakepit
 Sapphire Ring
@@ -878,6 +902,18 @@ Requires Level 38
 +(20-30)% to Fire Resistance
 −40% to Cold Resistance
 Stun Threshold is based on Energy Shield instead of Life
+]],[[
+Venopuncture
+Iron Ring
+Requires Level: 49
+League: Blight
+Adds 1 to 4 Physical Damage to Attacks
++(20–30) to Strength
+25% chance to cause Bleeding on Hit
+(40–60)% increased Damage with Bleeding
+You are Chilled while you are Bleeding
+Non-Chilled Enemies you inflict Bleeding on are Chilled
+Bleeding Enemies you Kill with Hits Shatter
 ]],[[
 Ventor's Gamble
 Gold Ring

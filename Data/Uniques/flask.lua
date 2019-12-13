@@ -1,4 +1,4 @@
--- Item data (c) Grinding Gear Games
+﻿-- Item data (c) Grinding Gear Games
 
 return {
 -- Flask: Life
@@ -90,11 +90,12 @@ Requires Level 68
 Bottled Faith
 Sulphur Flask
 League: Synthesis
+Source: Drops from unique{Synthete Nightmare} in normal{The Cortex}
 Requires Level 35
 Creates Consecrated Ground on Use
 (30-50)% increased Duration
 Consecrated Ground created by this Flask has Tripled Radius
-+(1.00-2.00)% to Critical Strike Chance against Enemies on Consecrated Ground during Effect
++(1.0-2.0)% to Critical Strike Chance against Enemies on Consecrated Ground during Effect
 Consecrated Ground created during Effect applies (7–10)% increased Damage taken to Enemies
 ]],[[
 Coralito's Signature
@@ -231,6 +232,17 @@ Gain Unholy Might during Flask Effect
 Immunity to Ignite during Flask effect
 Removes Burning on use
 ]],[[
+The Sorrow of the Divine
+Sulphur Flask
+League: Legion
+Source: Drops from Templar Legion
+Requires Level 35
+Implicits: 1
+Creates Consecrated Ground on Use
+(25-50)% increased Duration
+Zealot's Oath during Flask effect
+Life Recovery from Flasks also applies to Energy Shield during Flask Effect
+]],[[
 Soul Catcher
 Quartz Flask
 League: Incursion
@@ -274,17 +286,6 @@ Creates Consecrated Ground on Use
 (10-20)% increased Duration
 Gains no Charges during Effect of any Overflowing Chalice Flask
 100% increased Charges gained by Other Flasks during Flask Effect
-]],[[
-The Sorrow of the Divine
-Sulphur Flask
-League: Legion
-Source: Drops from normal{Templar} legion
-Requires Level 35
-Implicits: 1
-Creates Consecrated Ground on Use
-(25-50)% increased Duration
-Zealot's Oath during Flask effect
-Life Recovery from Flasks also applies to Energy Shield during Flask Effect
 ]],[[
 Vessel of Vinktar
 Topaz Flask

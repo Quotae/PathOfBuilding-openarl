@@ -88,27 +88,29 @@ Variant: Dexterity: Hatred
 Variant: Dexterity: Purity of Ice
 Variant: Intelligence: Clarity
 Variant: Intelligence: Discipline
+Variant: Intelligence: Malevolence
 Variant: Intelligence: Purity of Elements
 Variant: Intelligence: Purity of Lightning
 Variant: Intelligence: Wrath
+Variant: Intelligence: Zealotry
 Variant: Envy
 Requires Level 55
 +(10–16) to all Attributes
 {variant:1,2,3,4}+(20-30) to Strength
 {variant:5,6,7,8}+(20-30) to Dexterity
-{variant:9,10,11,12,13}+(20–30) to Intelligence
-{variant:14}Grants Level 15 Envy Skill
+{variant:9,10,11,12,13,14,15}+(20–30) to Intelligence
+{variant:16}Grants Level 15 Envy Skill
 {variant:1,2,3,4}(15-20)% increased Armour
 {variant:5,6,7,8}(15-20)% increased Evasion Rating
-{variant:9,10,11,12,13}(15–20)% increased maximum Energy Shield
-{variant:14}+(15-20) to all Attributes
+{variant:9,10,11,12,13,14,15}(15–20)% increased maximum Energy Shield
+{variant:16}+(15-20) to all Attributes
 +(50–70) to maximum Life
 {variant:1,2,3,4}10% reduced Stun and Block Recovery
 {variant:5,6,7,8}Nearby Enemies grant 25% increased Flask Charges
-{variant:9,10,11,12,13}2% additional Chance to receive a Critical Strike
+{variant:9,10,11,12,13,14,15}2% additional Chance to receive a Critical Strike
 {variant:1,2,3,4}Nearby Enemies have 10% reduced Stun and Block Recovery
-{variant:9,10,11,12,13}Nearby Enemies have an additional 2% chance to receive a Critical Strike
-{variant:14}(15-20)% increased Global Defences
+{variant:9,10,11,12,13,14,15}Hits against Nearby Enemies have 50% increased Critical Strike Chance
+{variant:16}(15-20)% increased Global Defences
 {variant:1}Anger Reserves no Mana
 {variant:2}Determination Reserves no Mana
 {variant:3}Purity of Fire Reserves no Mana
@@ -119,10 +121,12 @@ Requires Level 55
 {variant:8}Purity of Ice Reserves no Mana
 {variant:9}Clarity Reserves no Mana
 {variant:10}Discipline Reserves no Mana
-{variant:11}Purity of Elements Reserves no Mana
-{variant:12}Purity of Lightning Reserves no Mana
-{variant:13}Wrath Reserves no Mana
-{variant:14}Envy Reserves no Mana
+{variant:11}Malevolence Reserves no Mana
+{variant:12}Purity of Elements Reserves no Mana
+{variant:13}Purity of Lightning Reserves no Mana
+{variant:14}Wrath Reserves no Mana
+{variant:15}Zealotry Reserves no Mana
+{variant:16}Envy Reserves no Mana
 ]],[[
 The Aylardex
 Agate Amulet
@@ -150,6 +154,17 @@ Requires Level 30
 {variant:1}100% increased Quantity of Items Dropped by Slain Normal Enemies
 {variant:2}(50-100)% increased Quantity of Items Dropped by Slain Normal Enemies
 {variant:3}(35-50)% increased Quantity of Items Dropped by Slain Normal Enemies
+]],[[
+Badge of the Brotherhood
+Turquoise Amulet
+Requires Level: 20
+League: Blight
++(16–24) to Dexterity and Intelligence
+(7–10)% increased Cooldown Recovery of Travel Skills per Frenzy Charge
+(7–10)% increased Effect of Elusive on you per Power Charge
+(20–25)% chance to lose a Frenzy Charge when you use a Travel Skill
+(20–25)% chance to lose a Power Charge when you gain Elusive
+Your Maximum Frenzy Charges is equal to your Maximum Power Charges
 ]],[[
 Blightwell
 Clutching Talisman
@@ -396,8 +411,7 @@ Grants Level 22 Precision Skill
 Adds (12-15) to (24-28) Physical Damage to Attacks
 Adds (11-15) to (23-28) Cold Damage to Attacks
 +(23-28)% to Global Critical Strike Multiplier
-(0.80-1.00)% of Physical Attack Damage Leeched as Life
-Precision has 50% less Mana Reservation
+(0.8-1)% of Physical Attack Damage Leeched as Life
 ]],[[
 The Ignomon
 Gold Amulet
@@ -494,6 +508,17 @@ Requires Level 20
 (12-15)% chance to gain a Power Charge on Killing an Enemy affected by fewer than 5 Poisons
 10% increased Damage with Poison per Frenzy Charge
 3% increased Poison Duration per Power Charge
+]],[[
+The Jinxed Juju
+Citrine Amulet
+Requires Level: 48
++(16–24) to Strength and Dexterity
++(30–40) to Intelligence
++(23–31)% to Chaos Resistance
+(10–15)% increased Effect of your Curses
+(10–15)% increased effect of Non-Curse Auras from your Skills
+10% of Damage from Hits is taken from your Spectres' Life before you
+(The damage they take will be divided evenly between them)
 ]],[[
 Marylene's Fallacy
 Lapis Amulet
@@ -633,14 +658,16 @@ Nearby Allies gain 40% increased Mana Regeneration Rate
 Sidhebreath
 Paua Amulet
 Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.8.0
 Variant: Current
 (20-30)% increased Mana Regeneration Rate
 +25% to Cold Resistance
-0.2% of Physical Attack Damage Leeched as Mana
+{variant:1,2}0.2% of Physical Attack Damage Leeched as Mana
 Minions have (10-15)% increased maximum Life
 Minions have (10-15)% increased Movement Speed
-Minions deal (10-15)% increased Damage
-{variant:2}(10-15)% reduced Mana Cost of Minion Skills
+{variant:3}Minions deal 6 to 13 additional Cold Damage
+{variant:1,2}Minions deal (10-15)% increased Damage
+{variant:2,3}(10-15)% reduced Mana Cost of Minion Skills
 ]],[[
 Solstice Vigil
 Onyx Amulet
@@ -657,9 +684,13 @@ Star of Wraeclast
 Ruby Amulet
 Source: Vendor recipe
 Variant: Pre 2.6.0
+Variant: Pre 3.8.0
 Variant: Current
 Requires Level 28
+{variant:1,2}Grants level 20 Illusory Warp Skill
+{variant:3}Grants Level 10 Frostblink Skill
 +(20-30)% to Fire Resistance
+{variant:3}Grants Level 10 Frostblink Skill
 (30-50)% increased Cold Damage
 +(10-15)% to all Elemental Resistances
 {variant:1}30% increased Radius of Curse Skills
@@ -684,11 +715,11 @@ Requires Level 5
 Tavukai
 Coral Amulet
 League: Legion
-Source: Drops from normal{Karui} legion
+Source: Drops from Karui Legion
 Requires Level 54
 (2.0-4.0) Life regenerated per second
 +(30-40) to Intelligence
-Minions have +(-17-17)% to Chaos Resistance
+Minions have (-17-17)% to Chaos Resistance
 Summon Raging Spirit has (20-30)% increased Duration
 Summoned Raging Spirits deal (60-80)% increased Damage
 Summoned Raging Spirits have (80-100)% increased maximum Life

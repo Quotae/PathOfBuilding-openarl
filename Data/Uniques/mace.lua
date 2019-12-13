@@ -6,15 +6,13 @@ return {
 Brightbeak
 War Hammer
 Variant: Pre 2.6.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 20, 71 Str
 Implicits: 2
 {variant:1}20% increased Stun Duration on Enemies
-{variant:2,3}10% reduced Enemy Stun Threshold
+{variant:2}10% reduced Enemy Stun Threshold
 (50-75)% increased Physical Damage
-{variant:1,2}50% increased Attack Speed
-{variant:3}45% increased Attack Speed
+50% increased Attack Speed
 25% increased Critical Strike Chance
 +(20-30)% to Fire Resistance
 +(20-30)% to Lightning Resistance
@@ -129,7 +127,7 @@ Implicits: 2
 Lavianga's Wisdom
 War Hammer
 League: Legion
-Source: Drops from normal{Karui} legion
+Source: Drops from Karui Legion
 Variant: Pre 2.6.0
 Variant: Pre 3.7.0
 Variant: Current
@@ -137,12 +135,12 @@ Requires Level 20, 71 Str
 Implicits: 2
 {variant:1}20% increased Stun Duration on Enemies
 {variant:2,3}10% reduced Enemy Stun Threshold
-{variant:1,2}(130-160)% increased Physical Damage
 {variant:3}(160-200)% increased Physical Damage
 {variant:1,2}+(10-20) to maximum Life
 {variant:1,2}+(10-20) to maximum Mana
 {variant:3}+70 to maximum Life
 {variant:3}+70 to maximum Mana
+{variant:1,2}(130-160)% increased Physical Damage
 5% reduced Movement Speed
 {variant:1,2}10% increased Area of Effect of Area Skills
 {variant:3}(15-25)% increased Area of Effect
@@ -170,6 +168,16 @@ Skills Chain +1 times
 {variant:2}30% chance to Cast a Socketed Lightning Spell on Hit
 {variant:3,4,5}Trigger a Socketed Lightning Spell on Hit
 Socketed Lightning Spells deal 100% increased Spell Damage if Triggered
+]],[[
+Nebulis
+Void Sceptre
+League: Synthesis
+Source: Drops from unique{Synthete Nightmare} in normal{The Cortex}
+Requires Level 68, 104 Str, 122 Int
+40% increased Elemental Damage
+(15-20)% increased Cast Speed
+(15-20)% increased Cold Damage per 1% Cold Resistance above 75%
+(15-20)% increased Lightning Damage per 1% Lightning Resistance above 75%
 ]],[[
 Nebuloch
 Nightmare Mace
@@ -315,17 +323,15 @@ Cannot be Blinded
 Death's Hand
 Karui Sceptre
 Variant: Pre 2.3.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 56, 96 Str, 96 Int
 Implicits: 2
 {variant:1}10% increased Elemental Damage
-{variant:2,3}26% increased Elemental Damage
-{variant:1,2}Adds (30-41) to (80-123) Physical Damage
-{variant:3}Adds (35-46) to (85-128) Physical Damage
+{variant:2}26% increased Elemental Damage
+Adds (30-41) to (80-123) Physical Damage
 (20-50)% increased Critical Strike Chance
 30% chance to gain a Power Charge when you Stun
-Gain Unholy Might for 4 seconds on Critical Strike
+Gain Unholy Might for 2 seconds on Critical Strike
 ]],[[
 Doon Cuebiyari
 Vaal Sceptre
@@ -379,25 +385,15 @@ Requires Level 68, 104 Str, 122 Int
 Implicits: 2
 {variant:1,2}15% increased Elemental Damage
 {variant:3,4}40% increased Elemental Damage
-50% reduced maximum number of Raised Zombies
-{variant:1}Raised Zombies have +500 to maximum Life
-{variant:2,3}Raised Zombies have +2000 to maximum Life
-{variant:4}Raised Zombies have +5000 to maximum Life
+50% reduced number of Zombies allowed
+{variant:1}+500 to Zombie maximum Life
+{variant:2,3}+2000 to Zombie maximum Life
+{variant:4}+5000 to Zombie maximum Life
 (25-30)% increased Zombie Resistances
 25% increased Zombie Size
-Enemies killed by Zombies explode dealing 20% of their Maximum Life as Fire Damage
 {variant:1,2,3}Zombies deal (80-100)% increased Physical Damage
-{variant:4}Raised Zombies deal (80-100)% more Physical Damage
-]],[[
-Nebulis
-Void Sceptre
-Fractured Item
-League: Synthesis
-Requires Level 68, 104 Str, 122 Int
-40% increased Elemental Damage
-{fractured}(15-20)% increased Cast Speed
-(15-20)% increased Cold Damage per 1% Cold Resistance above 75%
-(15-20)% increased Lightning Damage per 1% Lightning Resistance above 75%
+{variant:4}Zombies deal (80-100)% more Physical Damage
+Enemies killed by Zombies explode dealing Fire Damage
 ]],[[
 Nycta's Lantern
 Crystal Sceptre
@@ -418,6 +414,16 @@ Socketed Gems are Supported by level 10 Fire Penetration
 {variant:2,3,4}(150-200)% increased Physical Damage
 +(6-10) Life gained for each Enemy hit by Attacks
 25% increased Light Radius
+]],[[
+Sign of the Sin Eater
+Tyrant's Sekhem
+League: Legion
+Source: Drops from Templar Legion
+Requires Level 58, 99 Str, 99 Int
+26% increased Elemental Damage
++(10-30) to Strength and Intelligence
+Grants Level 30 Smite Skill
+Enemies inflict Elemental Ailments on you instead of nearby Allies
 ]],[[
 Singularity
 Platinum Sceptre
@@ -618,7 +624,7 @@ Your Critical Strikes do not deal extra Damage
 Marohi Erqi
 Karui Maul
 League: Legion
-Source: Drops from normal{Karui} legion
+Source: Drops from Legion Legion
 Variant: Pre 2.6.0
 Variant: Pre 3.7.0
 Variant: Current
@@ -633,9 +639,9 @@ Implicits: 2
 {variant:1,2}Adds 10 to 20 Physical Damage
 {variant:3}Adds 30 to 40 Physical Damage
 10% reduced Attack Speed
+-100 to Accuracy Rating
 10% reduced Movement Speed
 (40-50)% increased Stun Duration on Enemies
--100 to Accuracy Rating
 ]],[[
 Quecholli
 Jagged Maul
@@ -662,16 +668,6 @@ Adds (94-98) to (115-121) Physical Damage
 +(25-50) to all Attributes
 Enemies killed explode dealing 10% of their Life as Fire Damage
 Recover 5% of Maximum Life on Kill
-]],[[
-Sign of the Sin Eater
-Tyrant's Sekhem
-League: Legion
-Source: Drops from normal{Templar} legion
-Requires Level 58, 99 Str, 99 Int
-26% increased Elemental Damage
-+(10-30) to Strength and Intelligence
-Grants Level 30 Smite Skill
-Enemies inflict Elemental Ailments on you instead of nearby Allies
 ]],[[
 Tidebreaker
 Imperial Maul

@@ -1,4 +1,4 @@
--- Item data (c) Grinding Gear Games
+﻿-- Item data (c) Grinding Gear Games
 
 return {
 -- Weapon: Bow
@@ -12,10 +12,10 @@ Source: Vendor recipe
 {variant:1}Adds (60-70) to (180-210) Physical Damage
 {variant:2}Adds (95-115) to (240-265) Physical Damage
 (80-100)% increased Evasion Rating
-2 Additional Arrows
-Every 16 seconds you gain iron Reflexes for 8 seconds
-30% more Bow Damage at Close Range while you have iron Reflexes
-30% increased Attack, Cast and Movements Speed while you do not have Iron Reflexes
+Bow Attacks fire 2 additional Arrows
+Every 16 seconds you gain Iron Reflexes for 8 seconds
+30% more Damage with Arrow Hits at Close Range while you have Iron Reflexes
+30% increased Attack, Cast and Movement Speed while you do not have Iron Reflexes
 You have Far Shot while you do not have Iron Reflexes
 ]],[[
 Chin Sol
@@ -55,6 +55,8 @@ Variant: Double Damage
 Variant: Double Damage while Foccused
 Variant: Socketed Spell Trigger
 Requires Level 57, 190 Dex
+Implicits: 1
+(4-6)% increased Movement Speed
 (140–170)% increased Physical Damage
 (25–35)% increased Critical Strike Chance
 50% chance to inflict Bleeding on Critical Strike with Attacks
@@ -82,7 +84,7 @@ Adds (100–120) to (150–165) Physical Damage against Bleeding Enemies
 Darkscorn
 Assassin Bow
 League: Legion
-Source: Drops from normal{Maraketh} legion
+Source: Drops from Maraketh Legion
 Variant: Pre 1.2.0
 Variant: Pre 2.0.0
 Variant: Pre 2.6.0
@@ -98,24 +100,10 @@ Implicits: 1
 {variant:5}Adds (15-20) to (25-30) Physical Damage
 {variant:1,2,3,4}10% increased Attack Speed
 {variant:5}20% increased Attack Speed
-(15-30)% increased Global Accuracy Rating
 25% of Physical Damage Converted to Chaos Damage
-25% of Physical Damage from Hits taken as Chaos Damage
+(15-30)% increased Accuracy Rating
+25% of Physical Damage taken as Chaos Damage
 {variant:5}20% chance for Poisons inflicted with this Weapon to deal 300% more Damage
-]],[[
-Death's Harp
-Death Bow
-Upgrade: Upgrades to unique{Death's Opus} via prophecy{The Bowstring's Music}
-Variant: Pre 2.2.0
-Variant: {2_6}Pre 3.0.0
-Variant: Current
-Requires Level 32, 107 Dex
-(30-50)% increased Critical Strike Chance
-(100-125)% increased Physical Damage
-10% increased Attack Speed
-{variant:1,3}+100% to Global Critical Strike Multiplier
-{variant:2}+150% to Global Critical Strike Multiplier
-Adds an additional Arrow
 ]],[[
 Death's Opus
 Death Bow
@@ -194,21 +182,19 @@ Decimation Bow
 Variant: Pre 1.2.0
 Variant: Pre 2.6.0
 Variant: {2_6}Pre 3.0.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 53, 170 Dex
 (30-50)% increased Critical Strike Chance
 {variant:1,2}(90-100)% increased Physical Damage
-{variant:3,4,5}(110-125)% increased Physical Damage
-{variant:2,3,4,5}Adds (25-35) to (36-45) Physical Damage
+{variant:3,4}(110-125)% increased Physical Damage
+{variant:2,3,4}Adds (25-35) to (36-45) Physical Damage
 +(20-30) to Dexterity
-{variant:1,2,3,4}+(200-250) to Accuracy Rating
-{variant:5}+(350-400) to Accuracy Rating
++(200-250) to Accuracy Rating
 {variant:1,2,3}Arrows always Pierce
-{variant:4,5}Arrows Pierce all Targets
+{variant:4}Arrows Pierce all Targets
 10% increased Movement Speed
 {variant:1,2}Cannot Leech
-{variant:3,4,5}Cannot Leech Life
+{variant:3,4}Cannot Leech Life
 ]],[[
 Iron Commander
 Death Bow
@@ -267,17 +253,19 @@ Quill Rain
 Short Bow
 Variant: Pre 2.6.0
 Variant: {2_6}Pre 3.5.0
+Variant: Pre 3.9.0
 Variant: Current
 Requires Level 5, 26 Dex
 +(10-20) to Dexterity
-{variant:2,3}100% increased Physical Damage
+{variant:2,3,4}100% increased Physical Damage
 100% increased Attack Speed
 +(25-50) to Accuracy Rating
 (50-100)% increased Projectile Speed
 {variant:1}50% less Weapon Damage
 {variant:2}40% less Weapon Damage
 {variant:3}40% less Damage
-{variant:2,3}+2 Mana gained for each Enemy hit by Attacks
+{variant:4}30% less Damage
+{variant:2,3,4}+2 Mana gained for each Enemy hit by Attacks
 ]],[[
 Reach of the Council
 Spine Bow
@@ -375,12 +363,16 @@ Adds 1 to 85 Lightning Damage
 ]],[[
 Voltaxic Rift
 Spine Bow
+Variant: Pre 3.9.0
+Variant: Current
 Requires Level 64, 212 Dex
 Adds 1 to (275-325) Lightning Damage
 (10-15)% increased Attack Speed
 60% of Lightning Damage Converted to Chaos Damage
 10% Chance to Shock
 Your Chaos Damage can Shock
+{variant:2}Shock Enemies as though dealing 300% more Damage
+{variant:2}Your Shocks can increase Damage taken by up to a maximum of 100%
 ]],[[
 Windripper
 Imperial Bow
@@ -423,13 +415,16 @@ Citadel Bow
 League: Breach
 Source: Upgraded from unique{Xoph's Inception} using currency{Blessing of Xoph}
 Variant: Pre 3.3.0
+Variant: Pre 3.9.0
 Variant: Current
 Requires Level 64, 185 Dex
+{variant:3}Socketed Gems are Supported by Level 20 Ignite Proliferation
 (250-300)% increased Physical Damage
 50% of Physical Damage Converted to Fire Damage
 10% chance to Ignite
 {variant:1}Ignites your Skills cause spread to other Enemies within a Radius of 12
 {variant:2}Ignites your Skills cause spread to other Enemies within a Radius of 15
+{variant:3}Socketed Gems are Supported by level 20 Ignite Proliferation
 Recover (40-60) Life when you Ignite an Enemy
 ]],
 }

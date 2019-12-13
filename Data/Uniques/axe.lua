@@ -1,4 +1,4 @@
--- Item data (c) Grinding Gear Games
+﻿-- Item data (c) Grinding Gear Games
 
 return {
 -- Weapon: One Handed Axe
@@ -22,10 +22,10 @@ Cleaver
 Source: Upgraded from unique{Dreadarc} via prophecy{Burning Dread}
 Requires Level 60
 Adds (5-15) to (20-25) Physical Damage
-Adds (223-250) to (264-280) Fire Damage
+Adds (223–250) to (264–280) Fire Damage
 5% increased Movement Speed
-(7-10)% increased Attack Speed
-+(15-25)% to Fire Resistance
+(7–10)% increased Attack Speed
++(15–25)% to Fire Resistance
 Hits ignore Enemy Monster Fire Resistance while you are Ignited
 ]],[[
 Dyadus
@@ -155,7 +155,7 @@ Variant: {2_6}Pre 3.0.0
 Variant: Current
 Requires Level 45, 99 Str, 57 Dex
 {variant:1}(100-120)% increased Physical Damage
-{variant:2}(180-200)% increased Physical Damage
+{variant:2}(180–200)% increased Physical Damage
 +100 to maximum Life
 10.0 Life Regenerated per second
 1% of Physical Attack Damage Leeched as Life
@@ -191,13 +191,13 @@ Attacks have Blood Magic
 Kaom's Primacy
 Karui Chopper
 League: Legion
-Source: Drops from normal{Karui} legion
+Source: Drops from Karui Legion
 Variant: Pre 3.7.0
 Variant: Current
 Requires Level 58, 151 Str, 43 Dex
 (160-220)% increased Physical Damage
-{variant:1}Adds (16-21) to (32-38) Fire Damage
 +20 Life gained on Kill
+{variant:1}Adds (16-21) to (32-38) Fire Damage
 +(150-250) to Accuracy Rating
 Culling Strike
 {variant:2}Gain 1 Rage on Critical Hit with attacks, no more than once every 0.5 seconds
@@ -207,16 +207,20 @@ Kingmaker
 Despot Axe
 Source: Vendor recipe
 Variant: Pre 2.6.0
+Variant: Pre 3.6.0
 Variant: Current
 Requires Level 66, 140 Str, 86 Dex
-(200-250)% increased Physical Damage
+{variant:1,2}(200-250)% increased Physical Damage
+{variant:3}(250-285)% increased Physical Damage
 (7-12)% increased Attack Speed
-{variant:2}(30-40)% increased Critical Strike Chance
+{variant:2,3}(30-40)% increased Critical Strike Chance
 {variant:1}+(100-150) to maximum Mana
-{variant:2}Insufficient Mana doesn't prevent your Melee Attacks
 Nearby Allies have 30% increased Item Rarity
 {variant:1}Nearby Allies' spells have Culling Strike
-{variant:2}Nearby Allies have Culling Strike
+{variant:2,3}Nearby Allies have Culling Strike
+{variant:2,3}Insufficient Mana doesn't prevent your Melee Attacks
+{variant:3}Nearby Allies have +50% to Critical Strike Multiplier
+{variant:3}Nearby Allies have Fortify
 ]],[[
 Kitava's Feast
 Void Axe
@@ -274,8 +278,8 @@ Hits can't be Evaded
 Sinvicta's Mettle
 Ezomyte Axe
 Requires Level 62
-(200-212)% increased Physical Damage
-(8-12)% increased Attack Speed
+(200–212)% increased Physical Damage
+(8–12)% increased Attack Speed
 Rampage
 2% increased Area of Effect per 25 Rampage Kills
 Gain a Frenzy Charge on every 50th Rampage Kill
@@ -309,14 +313,11 @@ Trigger Level 20 Bone Nova when you Kill a Bleeding Enemy
 ]],[[
 Wideswing
 Poleaxe
-Variant: {2_6}Pre 3.7.0
-Variant: Current
 Requires Level 18, 44 Str, 25 Dex
 Socketed Gems are Supported by level 20 Increased Area of Effect
 (120-160)% increased Physical Damage
 +10 to Strength
-{variant:1}+(50-80) to Accuracy Rating
-{variant:2}+(120-150) to Accuracy Rating
++(50-80) to Accuracy Rating
 +10 Mana Gained on Kill
 +2 to Weapon range
 ]],[[

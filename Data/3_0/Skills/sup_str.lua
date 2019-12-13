@@ -1857,6 +1857,9 @@ skills["SupportMultistrike"] = {
 	excludeSkillTypes = { SkillType.Vaal, },
 	statDescriptionScope = "gem_stat_descriptions",
 	statMap = {
+		["multistrike_damage_+%_final_on_first_repeat"] = {
+			mod("Damage", "MORE", nil, ModFlag.Attack),
+		},
 		["support_multiple_attack_damage_+%_final"] = {
 			mod("Damage", "MORE", nil, ModFlag.Attack),
 		},
@@ -2224,7 +2227,7 @@ skills["SupportRangedAttackTotem"] = {
 }
 skills["SupportReducedMana"] = {
 	name = "Inspiration",
-	description = "Supports any skill.",
+	description = "Supports any skill. Minions, Totems, Traps and Mines cannot gain Inspiration Charges.",
 	color = 1,
 	support = true,
 	requireSkillTypes = { },

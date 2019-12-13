@@ -101,6 +101,8 @@ skills["VaalArcChain"] = {
 		chaining = true,
 	},
 	baseMods = {
+		flag("Condition:CanBeLucky"),
+		mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CanBeLucky" }),
 	},
 	qualityStats = {
 		{ "shock_duration_+%", 1.5 },
@@ -6070,7 +6072,7 @@ skills["Soulrend"] = {
 	},
 	baseMods = {
 		skill("debuff", true),
-		skill("radius", 13),
+		skill("radius", 10),
 	},
 	qualityStats = {
 		{ "chaos_damage_+%", 1 },
@@ -7327,7 +7329,6 @@ skills["Skitterbots"] = {
 		"chill_effect_+%",
 		"minion_movement_speed_+%",
 		"display_skitterbot_limit_per_type",
-		"base_deal_no_damage",
 		"display_skitterbot_shocking_aura",
 		"display_skitterbot_chilling_aura",
 	},
@@ -7736,20 +7737,6 @@ skills["Wither"] = {
 	skillTypes = { [SkillType.Spell] = true, [SkillType.Area] = true, [SkillType.Duration] = true, [SkillType.SkillCanTotem] = true, [SkillType.ChaosSkill] = true, [SkillType.Channelled] = true, [SkillType.AreaSpell] = true, },
 	statDescriptionScope = "debuff_skill_stat_descriptions",
 	castTime = 0.28,
-	parts = {
-		{
-			name = "1 Stack",
-		},
-		{
-			name = "5 Stacks",
-		},
-		{
-			name = "10 Stacks",
-		},
-		{
-			name = "15 Stacks",
-		},
-	},
 	statMap = {
 		["base_skill_effect_duration"] = {
 		},
@@ -7758,7 +7745,9 @@ skills["Wither"] = {
 			div = 1000,
 		},
 		["chaos_damage_taken_+%"] = {
-			mod("ChaosDamageTaken", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered" }),
+			flag("Condition:CanWither"),
+			mod("Dummy", "DUMMY", 1, 0, 0, { type = "Condition", var = "CanWither" }),
+			mod("ChaosDamageTaken", "INC", 6, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered", effectStackVar = "WitheredStackCount", effectStackLimit = 15 }),
 		},
 		["base_movement_velocity_+%"] = {
 			mod("MovementSpeed", "INC", nil, 0, 0, { type = "GlobalEffect", effectType = "Debuff", effectName = "Withered" }),
@@ -7773,10 +7762,6 @@ skills["Wither"] = {
 	baseMods = {
 		skill("debuff", true),
 		skill("radius", 18),
-		skill("stackCount", 1, { type = "SkillPart", skillPart = 1 }),
-		skill("stackCount", 5, { type = "SkillPart", skillPart = 2 }),
-		skill("stackCount", 10, { type = "SkillPart", skillPart = 3 }),
-		skill("stackCount", 15, { type = "SkillPart", skillPart = 4 }),
 	},
 	qualityStats = {
 		{ "skill_effect_duration_+%", 1 },

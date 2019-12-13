@@ -116,7 +116,7 @@ Requires Level 70
 +(20–30) to maximum Life
 +2 to Level of Socketed Gems
 Triggers Level 20 Elemental Aegis when Equipped
-(180–220)% increased Armour
+(200-250)% increased Armour
 +(60–80) to maximum Life
 +(80–100) to Evasion Rating and Energy Shield
 ]],[[
@@ -173,17 +173,15 @@ Implicits: 1
 Tukohama's Fortress
 Ebony Tower Shield
 Variant: {2_6}Pre 3.0.0
-Variant: Pre 3.7.0
 Variant: Current
 Requires Level 61, 159 Str
 Implicits: 1
-{variant:2,3}+(20-30) to maximum Life
+{variant:2}+(20-30) to maximum Life
 40% increased Totem Damage
 +(80-100) to maximum Life
 Can have up to 1 additional Totem summoned at a time
 +300 Armour per active Totem
 Blood Magic
-{variant:3}Mortal Conviction
 ]],
 -- Shield: Evasion
 [[
@@ -522,24 +520,10 @@ Implicits: 2
 10% increased Effect of Auras on your Minions
 Spreads Tar when you take a Critical Strike
 ]],[[
-Whakatutuki o Matua
-Tarnished Spirit Shield
-Source: Upgraded from unique{Matua Tupuna} via prophecy{The Mentor}
-Requires Level 63, 60 Int
-(5–10)% increased Spell Damage
-+3 to Level of Socketed Minion Gems
-+(40–80) to maximum Energy Shield
-(40–80)% increased Energy Shield
-+(15–25) to maximum Mana
-20% increased Effect of Auras on you
-20% increased Effect of Auras on your Minions
-Spreads Tar when you Block
-If you have Blocked Recently, you and nearby Allies Regenerate 5% of Life per second
-]],[[
 Rathpith Globe
 Titanium Spirit Shield
 League: Legion
-Source: Drops from normal{Vaal} legion
+Source: Drops from Vaal Legion
 Variant: {2_6}Pre 3.0.0
 Variant: Pre 3.4.0
 Variant: Pre 3.7.0
@@ -571,6 +555,20 @@ Requires Level 33, 82 Int
 Applies level 15 Punishment on Blocking a Melee Attack
 Applies level 15 Temporal Chains on Blocking a Projectile Attack
 Applies level 15 Elemental Weakness on Blocking a Spell
+]],[[
+Whakatutuki o Matua
+Tarnished Spirit Shield
+Source: Upgraded from unique{Matua Tupuna} via prophecy{The Mentor}
+Requires Level 63, 60 Int
+(5–10)% increased Spell Damage
++3 to Level of Socketed Minion Gems
++(40–80) to maximum Energy Shield
+(40–80)% increased Energy Shield
++(15–25) to maximum Mana
+20% increased Effect of Auras on you
+20% increased Effect of Auras on your Minions
+Spreads Tar when you Block
+If you have Blocked Recently, you and nearby Allies Regenerate 5% of Life per second
 ]],
 -- Shield: Armour/Evasion
 [[
@@ -821,18 +819,20 @@ Jaws of Agony
 Supreme Spiked Shield
 Variant: Pre 2.0.0
 Variant: {2_6}Pre 3.0.0
+Variant: Pre 3.8.0
 Variant: Current
 Requires Level 70, 85 Dex, 85 Int
 Implicits: 2
 {variant:1,2}Reflects (221-260) Physical Damage to Melee Attackers
-{variant:3}4% chance to Dodge Spell Damage
+{variant:3,4}4% chance to Dodge Spell Damage
+{variant:1,2,3}Grants level 20 Bear Trap Skill
+{variant:4}Grants Level 25 Bear Trap Skill
 (18-28)% increased Trap Damage
 (15-25)% increased Physical Damage
 +(60-80) to maximum Life
 −(14-18) Physical Damage taken from Attacks
 {variant:1}15% chance to gain a Power Charge on Throwing a Trap
-{variant:2,3}25% chance to gain a Power Charge on Throwing a Trap
-Grants level 20 Bear Trap Skill
+{variant:2,3,4}25% chance to gain a Power Charge on Throwing a Trap
 ]],[[
 Leper's Alms
 Mirrored Spiked Shield
@@ -864,11 +864,11 @@ Nearby allies Recover 2% of your maximum Life when you Die
 ]],[[
 Perepiteia
 Ezomyte Spiked Shield
-Fractured Item
 League: Synthesis
+Source: Drops from unique{Altered/Augmented/Rewritten/Twisted Synthete}
 Requires Level 62, 85 Dex, 85 Int
 2% chance to Dodge Spell Hits
-{fractured}+(1-3) to Level of Socketed Lightning Gems
++(1-3) to Level of Socketed Lightning Gems
 Triggers Level 20 Lightning Aegis when Equipped
 (1-20)% increased Attack Speed
 (1-20)% increased Cast Speed
