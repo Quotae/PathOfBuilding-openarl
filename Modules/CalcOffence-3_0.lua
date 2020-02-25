@@ -897,14 +897,6 @@ function calcs.offence(env, actor, activeSkill)
 		else
 			output.Time = 1 / output.Speed
 		end
-		
-		runSkillFunc("postSpeedFunc")
-		
-		if skillData.hitTimeOverride then
-			output.HitTime = skillData.hitTimeOverride
-			output.HitSpeed = 1 / output.HitTime
-		end
-		
 		if skillFlags.bothWeaponAttack then
 			if breakdown then
 				breakdown.Speed = {
@@ -2394,7 +2386,4 @@ function calcs.offence(env, actor, activeSkill)
 			t_insert(breakdown.ImpaleDPS, s_format("= %.1f", output.ImpaleDPS))
 		end
 	end
-	
-	runSkillFunc("postDamageFunc")
-	
 end

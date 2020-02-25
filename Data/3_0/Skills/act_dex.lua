@@ -1271,34 +1271,9 @@ skills["ChargedDash"] = {
 	},
 	statDescriptionScope = "skill_stat_descriptions",
 	castTime = 1,
-	parts = {
-		{
-			name = "Channelling, Moving",
-		},
-		{
-			name = "Channelling, Not Moving",
-		},
-		{
-			name = "Release",
-		},
-	},
-	postSpeedFunc = function(activeSkill, output)
-		if activeSkill.skillPart <= 2 then
-			activeSkill.skillData.hitTimeOverride = output.Time * 2
-		end
-	end,
-	preDamageFunc = function(activeSkill, output)
-		if activeSkill.skillPart == 3 then
-			local stages = output.ChargedDashStages or 1
-			mod("Damage", "MORE", -25, 0, KeywordFlag.Hit)
-			if stages > 1 then
-				mod("Damage", "MORE", 100, 0, KeywordFlag.Hit, { type = "Multiplier", var = "stages" })
-			end
-		end
-	end,
 	statMap = {
 		["charged_dash_damage_+%_maximum"] = {
-			mod("Damage", "MORE", nil, 0, 0, { type = "Multiplier", var = "ChargedDashDistance" }),
+			mod("Damage", "MORE", nil, 0, bit.bor(KeywordFlag.Hit, KeywordFlag.Ailment), { type = "Multiplier", var = "ChargedDashDistance" }),
 		},
 		["base_skill_show_average_damage_instead_of_dps"] = {
 		},
@@ -1309,8 +1284,6 @@ skills["ChargedDash"] = {
 		area = true,
 	},
 	baseMods = {
-		skill("showAverage", true, { type = "SkillPart", skillPart = 3 }),
-		mod("Damage", "MORE", 150, 0, 0, { type = "SkillPart", skillPart = 2 })
 	},
 	qualityStats = {
 		{ "attack_speed_+%", 0.5 },
