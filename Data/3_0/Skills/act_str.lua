@@ -3064,7 +3064,20 @@ skills["MoltenStrike"] = {
 			projectile = true,
 			area = true,
 		},
+		{
+			name = "Average Magma Balls",
+			melee = false,
+			projectile = true,
+			area = true,
+		},
 	},
+	postAreaFunc = function(activeSkill, output)
+		if activeSkill.skillPart == 3 then
+			local viableRadius = output.AreaOfEffectRadiusSecondary - 4
+			local ballChance = (output.AreaOfEffectRadius - 4) / viableRadius
+			activeSkill.skillData.dpsMultiplier = output.ProjectileCount * ballChance
+		end
+	end,
 	statMap = {
 		["active_skill_damage_over_time_from_projectile_hits_+%_final"] = {
 			mod("Damage", "MORE", nil, ModFlag.Dot, 0, { type = "SkillPart", skillPart = 2 })
@@ -3077,6 +3090,10 @@ skills["MoltenStrike"] = {
 		area = true,
 	},
 	baseMods = {
+		skill("radius", 9),
+		skill("radiusLabel", "Area of projectile explosions:"),
+		skill("radiusSecondary", 20),
+		skill("radiusSecondaryLabel", "Area in which projectiles will land around the enemy:")
 	},
 	qualityStats = {
 		{ "fire_damage_+%", 1 },

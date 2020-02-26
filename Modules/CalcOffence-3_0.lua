@@ -393,6 +393,9 @@ function calcs.offence(env, actor, activeSkill)
 			breakdown.AreaOfEffectMod = breakdown.mod(skillCfg, "AreaOfEffect")
 		end
 	end
+	
+	runSkillFunc("postAreaFunc")
+	
 	if activeSkill.skillTypes[SkillType.Aura] then
 		output.AuraEffectMod = calcLib.mod(skillModList, skillCfg, "AuraEffect")
 		if breakdown then
