@@ -203,7 +203,7 @@ function calcs.offence(env, actor, activeSkill)
 		end
 	end
 	if skillModList:Flag(nil, "SpellDamageAppliesToAttacks") then
-		-- Spell Damage conversion from Crown of Eyes
+		-- Spell Damage conversion from Crown of Eyes, Kinetic Bolt, and the Wandslinger notable
 		for i, value in ipairs(skillModList:Tabulate("INC", { flags = ModFlag.Spell }, "Damage")) do
 			local mod = value.mod
 			if band(mod.flags, ModFlag.Spell) ~= 0 then
