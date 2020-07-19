@@ -571,7 +571,8 @@ return {
 	}, },
 	{ label = "MH Chance to Hit", bgCol = colorCodes.MAINHANDBG, flag = "weapon1Attack", { format = "{0:output:MainHand.HitChance}%",
 		{ breakdown = "MainHand.HitChance" }, 
-		{ label = "Enemy Evasion modifiers", modName = "Evasion", enemy = true },
+		{ label = "Enemy Evasion modifiers", modName = { "Evasion", "CannotEvade" }, enemy = true },
+		{ label = "Player modifiers", modName = { "HitChance", "CannotBeEvaded", "IgnoreBlindHitChance" } },
 	}, },
 	{ label = "OH Accuracy", bgCol = colorCodes.OFFHANDBG, flag = "weapon2Attack", { format = "{0:output:OffHand.Accuracy}",
 		{ breakdown = "OffHand.Accuracy" }, 
@@ -579,7 +580,8 @@ return {
 	}, },
 	{ label = "OH Chance to Hit", bgCol = colorCodes.OFFHANDBG, flag = "weapon2Attack", { format = "{0:output:OffHand.HitChance}%",
 		{ breakdown = "OffHand.HitChance" },
-		{ label = "Enemy Evasion modifiers", modName = "Evasion", enemy = true },
+		{ label = "Enemy Evasion modifiers", modName = { "Evasion", "CannotEvade" }, enemy = true },
+		{ label = "Player modifiers", modName = { "HitChance", "CannotBeEvaded", "IgnoreBlindHitChance" } },
 	}, },
 } }
 } },
@@ -1062,9 +1064,22 @@ return {
 	{ label = "Total Increased", { format = "{0:mod:1}%", { modName = { "Armour", "ArmourAndEvasion", "Defences" }, modType = "INC" }, }, },
 	{ label = "Total More", { format = "{0:mod:1}%", { modName = { "Armour", "ArmourAndEvasion", "Defences" }, modType = "MORE" }, }, },
 	{ label = "Total", { format = "{0:output:Armour}", { breakdown = "Armour" }, }, },
+	{ label = "Double Armour Ch.", haveOutput = "DoubleArmourChance", { format = "{0:output:DoubleArmourChance}%", { modName = "DoubleArmourChance" }, }, },
 	{ label = "Phys. Dmg. Reduct", { format = "{0:output:PhysicalDamageReduction}%", 
 		{ breakdown = "PhysicalDamageReduction" },
-		{ modName = { "PhysicalDamageReduction", "PhysicalDamageReductionWhenHit" } }, 
+		{ modName = { "PhysicalDamageReduction", "PhysicalDamageReductionWhenHit", "ArmourDoesNotApplyToPhysicalDamageTaken", "DamageReductionMax" } }, 
+	}, },
+	{ label = "Fire Dmg. Reduct", haveOutput = "FireDamageReduction", { format = "{0:output:FireDamageReduction}%", 
+		{ breakdown = "FireDamageReduction" },
+		{ modName = { "ArmourAppliesToFireDamageTaken", "SelfIgnoreFireResistance", "DamageReductionMax" } }, 
+	}, },
+	{ label = "Cold Dmg. Reduct", haveOutput = "ColdDamageReduction", { format = "{0:output:ColdDamageReduction}%", 
+		{ breakdown = "ColdDamageReduction" },
+		{ modName = { "ArmourAppliesToColdDamageTaken", "SelfIgnoreColdResistance", "DamageReductionMax" } }, 
+	}, },
+	{ label = "Light. Dmg. Reduct", haveOutput = "LightningDamageReduction", { format = "{0:output:LightningDamageReduction}%", 
+		{ breakdown = "LightningDamageReduction" },
+		{ modName = { "ArmourAppliesToLightningDamageTaken", "SelfIgnoreLightningResistance", "DamageReductionMax" } }, 
 	}, },
 } }
 } },
@@ -1076,8 +1091,13 @@ return {
 	{ label = "Total Increased", { format = "{0:mod:1}%", { modName = { "Evasion", "ArmourAndEvasion", "Defences" }, modType = "INC" }, }, },
 	{ label = "Total More", { format = "{0:mod:1}%", { modName = { "Evasion", "ArmourAndEvasion", "Defences" }, modType = "MORE" }, }, },
 	{ label = "Total", { format = "{0:output:Evasion}", { breakdown = "Evasion" }, }, },
-	{ label = "Evade Chance", { format = "{0:output:EvadeChance}%", 
-		{ breakdown = "EvadeChance" },
+	{ label = "Melee Evade Ch.", { format = "{0:output:MeleeEvadeChance}%", 
+		{ breakdown = "MeleeEvadeChance" },
+		{ modName = { "CannotEvade" } },
+		{ label = "Enemy modifiers", modName = { "Accuracy", "HitChance" }, enemy = true },
+	}, },
+	{ label = "Proj. Evade Ch.", { format = "{0:output:ProjectileEvadeChance}%", 
+		{ breakdown = "ProjectileEvadeChance" },
 		{ modName = { "CannotEvade" } },
 		{ label = "Enemy modifiers", modName = { "Accuracy", "HitChance" }, enemy = true },
 	}, },
@@ -1146,6 +1166,7 @@ return {
 } }, { defaultCollapsed = true, label = "Other Avoidance", data = {
 	{ label = "Stun Avoid Chance", haveOutput = "StunAvoidChance", { format = "{0:output:StunAvoidChance}%", { modName = "AvoidStun" }, }, },
 	{ label = "Interupt Avoid Ch.", haveOutput = "InteruptStunAvoidChance", { format = "{0:output:InteruptStunAvoidChance}%", { modName = "AvoidInteruptStun" }, }, },
+	{ label = "Blind Avoid Ch.", haveOutput = "BlindAvoidChance", { format = "{0:output:BlindAvoidChance}%", { modName = "AvoidBlind" }, }, },
 	{ label = "Shock Avoid Ch.", haveOutput = "ShockAvoidChance", { format = "{0:output:ShockAvoidChance}%", { modName = "AvoidShock" }, }, },
 	{ label = "Freeze Avoid Ch.", haveOutput = "FreezeAvoidChance", { format = "{0:output:FreezeAvoidChance}%", { modName = "AvoidFreeze" }, }, },
 	{ label = "Chill Avoid Ch.", haveOutput = "ChillAvoidChance", { format = "{0:output:ChillAvoidChance}%", { modName = "AvoidChill" }, }, },
@@ -1175,19 +1196,19 @@ return {
 		},
 		{ format = "x {2:output:LightningTakenHitMult}",
 			{ breakdown = "LightningTakenHitMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenWhenHit", "LightningDamageTaken", "LightningDamageTakenWhenHit", "ElementalDamageTaken", "ElementalDamageTakenWhenHit", "LightningDamageTakenAsPhysical", "LightningDamageTakenAsFire", "LightningDamageTakenAsCold", "LightningDamageTakenAsChaos", "ElementalDamageTakenAsPhysical", "ElementalDamageTakenAsChaos" } }
+			{ modName = { "DamageTaken", "DamageTakenWhenHit", "LightningDamageTaken", "LightningDamageTakenWhenHit", "ElementalDamageTaken", "ElementalDamageTakenWhenHit", "LightningDamageTakenAsPhysical", "LightningDamageTakenAsFire", "LightningDamageTakenAsCold", "LightningDamageTakenAsChaos", "ElementalDamageTakenAsPhysical", "ElementalDamageTakenAsChaos", "SelfIgnoreLightningResistance" } }
 		},
 		{ format = "x {2:output:ColdTakenHitMult}",
 			{ breakdown = "ColdTakenHitMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenWhenHit", "ColdDamageTaken", "ColdDamageTakenWhenHit", "ElementalDamageTaken", "ElementalDamageTakenWhenHit", "ColdDamageTakenAsPhysical", "ColdDamageTakenAsFire", "ColdDamageTakenAsLightning", "ColdDamageTakenAsChaos", "ElementalDamageTakenAsPhysical", "ElementalDamageTakenAsChaos" } }
+			{ modName = { "DamageTaken", "DamageTakenWhenHit", "ColdDamageTaken", "ColdDamageTakenWhenHit", "ElementalDamageTaken", "ElementalDamageTakenWhenHit", "ColdDamageTakenAsPhysical", "ColdDamageTakenAsFire", "ColdDamageTakenAsLightning", "ColdDamageTakenAsChaos", "ElementalDamageTakenAsPhysical", "ElementalDamageTakenAsChaos", "SelfIgnoreColdResistance" } }
 		},
 		{ format = "x {2:output:FireTakenHitMult}", 
 			{ breakdown = "FireTakenHitMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenWhenHit", "FireDamageTaken", "FireDamageTakenWhenHit", "ElementalDamageTaken", "ElementalDamageTakenWhenHit", "FireDamageTakenAsPhysical", "FireDamageDamageTakenAsCold", "FireDamageTakenAsLightning", "FireDamageTakenAsChaos", "ElementalDamageTakenAsPhysical", "ElementalDamageTakenAsChaos" }  } 
+			{ modName = { "DamageTaken", "DamageTakenWhenHit", "FireDamageTaken", "FireDamageTakenWhenHit", "ElementalDamageTaken", "ElementalDamageTakenWhenHit", "FireDamageTakenAsPhysical", "FireDamageDamageTakenAsCold", "FireDamageTakenAsLightning", "FireDamageTakenAsChaos", "ElementalDamageTakenAsPhysical", "ElementalDamageTakenAsChaos", "SelfIgnoreFireResistance" }  } 
 		},
 		{ format = "x {2:output:ChaosTakenHitMult}",
 			{ breakdown = "ChaosTakenHitMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenWhenHit", "ChaosDamageTaken", "ChaosDamageTakenWhenHit", "ChaosDamageTakenAsPhysical", "ChaosDamageTakenAsFire", "ChaosDamageTakenAsCold", "ChaosDamageTakenAsLightning" } }
+			{ modName = { "DamageTaken", "DamageTakenWhenHit", "ChaosDamageTaken", "ChaosDamageTakenWhenHit", "ChaosDamageTakenAsPhysical", "ChaosDamageTakenAsFire", "ChaosDamageTakenAsCold", "ChaosDamageTakenAsLightning", "SelfIgnoreChaosResistance" } }
 		},
 	},
 	{ label = "Dot taken",
@@ -1197,19 +1218,19 @@ return {
 		},
 		{ format = "x {2:output:LightningTakenDotMult}",
 			{ breakdown = "LightningTakenDotMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenOverTime", "LightningDamageTaken", "LightningDamageTakenOverTime", "ElementalDamageTaken", "ElementalDamageTakenOverTime" } }
+			{ modName = { "DamageTaken", "DamageTakenOverTime", "LightningDamageTaken", "LightningDamageTakenOverTime", "ElementalDamageTaken", "ElementalDamageTakenOverTime", "SelfIgnoreLightningResistance" } }
 		},
 		{ format = "x {2:output:ColdTakenDotMult}",
 			{ breakdown = "ColdTakenDotMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenOverTime", "ColdDamageTaken", "ColdDamageTakenOverTime", "ElementalDamageTaken", "ElementalDamageTakenOverTime" } }
+			{ modName = { "DamageTaken", "DamageTakenOverTime", "ColdDamageTaken", "ColdDamageTakenOverTime", "ElementalDamageTaken", "ElementalDamageTakenOverTime", "SelfIgnoreColdResistance" } }
 		},
 		{ format = "x {2:output:FireTakenDotMult}", 
 			{ breakdown = "FireTakenDotMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenOverTime", "FireDamageTaken", "FireDamageTakenOverTime", "ElementalDamageTaken", "ElementalDamageTakenOverTime" }  } 
+			{ modName = { "DamageTaken", "DamageTakenOverTime", "FireDamageTaken", "FireDamageTakenOverTime", "ElementalDamageTaken", "ElementalDamageTakenOverTime", "SelfIgnoreFireResistance" }  } 
 		},
 		{ format = "x {2:output:ChaosTakenDotMult}",
 			{ breakdown = "ChaosTakenDotMult" }, 
-			{ modName = { "DamageTaken", "DamageTakenOverTime", "ChaosDamageTaken", "ChaosDamageTakenOverTime" } }
+			{ modName = { "DamageTaken", "DamageTakenOverTime", "ChaosDamageTaken", "ChaosDamageTakenOverTime", "SelfIgnoreChaosResistance" } }
 		},
 	},
 	{ label = "Reflect taken", haveOutput = "AnyTakenReflect",
