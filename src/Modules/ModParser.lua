@@ -904,6 +904,7 @@ local preFlagList = {
 		return { tag = { type = "ActorCondition", actor = "enemy", var = cond:gsub("^%a", string.upper) } }
 	end,
 	["^enemies affected by your spider's webs [th]a[vk]e "] = { tag = { type = "MultiplierThreshold", var = "Spider's WebStack", threshold = 1 }, applyToEnemy = true },
+	["^enemies shocked or frozen by you take "] = { tag = { type = "Condition", varList = {"Shocked","Frozen"} }, applyToEnemy = true, modSuffix = "Taken" },
 	["^enemies you curse take "] = { tag = { type = "Condition", var = "Cursed" }, applyToEnemy = true, modSuffix = "Taken" },
 	["^enemies you curse have "] = { tag = { type = "Condition", var = "Cursed" }, applyToEnemy = true },
 	["^nearby enemies take "] = { modSuffix = "Taken", applyToEnemy = true },
